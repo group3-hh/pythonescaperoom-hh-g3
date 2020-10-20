@@ -10,6 +10,7 @@ class Elvira(EscapeRoom):
         self.set_metadata("Achim", __name__)
         self.add_level(self.create_level1())
         self.add_level(self.create_level2())
+        self.add_level(self.create_level3())
 
     ### LEVELS ###
 
@@ -33,9 +34,27 @@ class Elvira(EscapeRoom):
             "Wie aktiviert man das Ding nochmal?"
         ]
         hints = [
-            "2 x 3 macht 4 "
+            "Es ist nicht Alex "
         ]
         return {"task_messages": task_messages, "hints": hints, "solution_function": self.level2, "data": spracher}
+
+    def create_level3(self):
+        numbers = "4 5 29 54 4 0 -214 542 -64 1 -3 6 -6"
+        task_messages = [
+            "Der Lautsprecher begann zu leuchten und eine Stimme ertönte",
+            f"Merke dir folgende Zahlen: <b> {numbers} </b "
+            "Sie helfen dir die Tür, die mit einem Code verschlossen ist öffnen zu können.",
+            "Ein Hinweis sei dir gegönnt: High and Low.",
+            "Da der Kopf des bärtigen Herrn noch immer dröhnte legte er sich erst mal hin für ein kleines Nickerichen"
+            "Nach einer nicht weiter definierten Zeit erwachte er wieder und im fiel sofort Panel zum eingeben des Codes auf"
+            "und nach mehrmaligen Versuchen fällt ihm auf, dass du 2 verschiedene Codes eingeben musst.",
+        ]
+
+        hints = [
+            "Was könnte High and Low mit den Zahlen zutun haben?",
+            "Ist vielleicht die kleinste Zahl ein Code und die größte Zahl auch?"
+        ]
+        return {"task_messages": task_messages, "hints": hints, "solution_function": self.level3, "data": numbers}
 
     ### SOLUTIONS ###
 
@@ -49,3 +68,24 @@ class Elvira(EscapeRoom):
         for result in liste:
             if result == search_for:
                 return result
+
+    def level3(self,numbers):
+
+        x = []
+        v = []
+        k = []
+        y = numbers.split(" ")
+
+        for i in range(0, len(y)):
+            v.append(int(y[i]))
+
+        v.sort()
+        x.append(v[len(v) - 1])
+        x.append(v[0])
+
+        for i in range(0, len(x)):
+            k.append(x[i])
+
+        result = k
+
+        return result
