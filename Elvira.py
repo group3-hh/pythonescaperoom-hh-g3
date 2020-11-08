@@ -46,7 +46,7 @@ class Elvira(EscapeRoom):
             "\"Weil du so auf Rätsel stehst hab ich dir meinen Wunsch auf dein Handy gehext. Verstehste Hex Hex! Hihi!",
             "Aber ntürlich nicht auf die simple Art. Ein bestimmtes Zeichen aus jedem Feld ergibt die Lösung",
             "Welches Zeichen? Ok kleiner Tipp: Potenziere die die magische Zahl bis du genug Ziffern hast um aus jedem Feld ein Zeichen auswählen zu können.\"",
-            f": <b> {liste} </b "
+            f": <b> {liste} </b ",
             "Genau Rätsel... das war der Grund warum er diesen Job gewählt hatte... Nicht, dass er nur einmal im Jahr arbeiten musste!",
             "Die Spielzeugproduktion hatte er vor Jahren outgesourct und wurde durch Lizenzeinnahmen finanziert",
             "welche größtenteils durch einen Namenhaften Getränkehersteller hereinsprudelten.",
