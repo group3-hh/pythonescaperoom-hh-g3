@@ -215,7 +215,7 @@ class Elvira(EscapeRoom):
     def create_level7(self):
         meng = ['achtSEPERATOREigelb','250 gSEPERATORPuderzucker','375 mlSEPERATORKondensmilch','8 gSEPERATORVanillezucker','250 mlSEPERATORRum']
 
-        if level == 1:
+        if run == 1:
 
             task_messages = [
                 "Du hast es geschafft und damit du weißt, was den Nikolaus so umgehauen hat und du für Weihnachten eventuell ein Geschenk hast. Hier deine Belohnung !! ",
@@ -297,7 +297,7 @@ class Elvira(EscapeRoom):
                     break
                 else:
                     count += 1
-        if level == 1:
+        if run == 1:
             erg = bytes.fromhex(erg).decode('utf-8')[::-1]
         else:
             erg = bytes.fromhex(erg).decode('utf-8')
@@ -370,7 +370,7 @@ class Elvira(EscapeRoom):
         zutat = create_liste(list2, 5)
 
         rezp = {zutat[i]: menge[i] for i in range(5)}
-        rezp2= 'Zuerst die Eidotter und den Vanillezucker schaumig schlagen, langsam den Puderzucker unterrühren und die' \
+        rezp2 = 'Zuerst die Eidotter und den Vanillezucker schaumig schlagen, langsam den Puderzucker unterrühren und die' \
                ' Kondensmilch dazugeben. Nun langsam den Rum unterrühren (je nachdem wie "alkoholisch" ihr den Eierlikör ' \
                'mögt, könnt es auch ein bissel mehr sein...). Das Ganze wird nun im Wasserbad langsam erhitzt. Das geht ' \
                'am besten, wenn man einen kleineren Topf in einen größeren stellt. Dabei immer wieder umrühren. Solange ' \
