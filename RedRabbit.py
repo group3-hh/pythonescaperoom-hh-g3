@@ -7,9 +7,9 @@ import requests
 from EscapeRoom import EscapeRoom
 
 if os.path.isfile('rezept.txt'):
-    level = 2
+    run = 2
 else:
-    level = 1
+    run = 1
 
 
 class Elvira(EscapeRoom):
@@ -32,7 +32,7 @@ class Elvira(EscapeRoom):
         for i in range(0, 500):
             n = random.randint(70, 1300)
             numbers.append(n)
-        if level == 1:
+        if run == 1:
             task_messages = [
                 "Mit brummenden Schädel erwachte der rot bemantelte Mann. Nie wieder den selbgepanschten Eierlikör des langorhigen schwor er sich",
                 "Verdammt dunkel hier, wie war noch die Pin seines Handy? Natürlich hatte dieser pelzige Eierdieb wieder seine Pin geändert",
@@ -73,7 +73,7 @@ class Elvira(EscapeRoom):
     def create_level2(self):
         liste = ['5663686e61' ,'454255a547' ,'5663666e61' , '5ac4e54e45' , '6adc4e4445','429c434b45','c45256a45','57d64c46c5','5a41484d65','4a4f1b4552','27d74c43c5' ,'5a4f464542 ','46796e6573 ','64f6727065 ','4b7c49434b ','624c49334b','666c67734b' ,'505041545a','4bd6544562','1c414e5a45','4c454e5645','ebc4534947','4b6c495050','686c696666','6b6c616d6d','5a31554e53','5a61756e73','7a61756e73']
 
-        if level == 1:
+        if run == 1:
             task_messages = [
                 "\"Du hast dein Handy entsprerrt!!! Nice! 1089 magische Zahl und mega belastend wenn man drüber nachdenkt\"" ,
                 "Belastend war das Wort, welches ihm bei seinem Vorgesetztem Santa Claus einfiel.",
@@ -378,7 +378,7 @@ class Elvira(EscapeRoom):
                'diese nicht ganz voll machen, weil der Eierlikör beim Abkühlen noch fester wird und man oftmals noch mit ' \
                'Milch oder Rum auffüllen muss, um ihn wieder aus der Flasche zu kriegen.'
 
-        if level == 1:
+        if run == 1:
                 with open('rezept.txt', 'w') as file:
                     file.write(json.dumps(rezp))
                 return rezp
