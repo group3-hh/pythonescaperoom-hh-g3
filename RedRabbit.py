@@ -351,20 +351,39 @@ class Elvira(EscapeRoom):
 
         return binary
 
+    def level4_check_identity_card_validity(self, json_choice):
+        json_deserialization = json.loads(json_choice)
+        id_number = json_deserialization["identitycard"][0]["idnumber"]
+        birth_date = json_deserialization["identitycard"][0]["birthdate"]
+        expiry_date = json_deserialization["identitycard"][0]["expirydate"]
+        total_check_number = json_deserialization["identitycard"][0]["totalchecknumber"]
+
+        id_number_is_valid = self.level4_calculate_checksum(id_number[:-1]) == int(id_number[-1])
+        birth_date_is_valid = self.level4_calculate_checksum(birth_date[:-1]) == int(birth_date[-1])
+        expiry_date_is_valid = self.level4_calculate_checksum(expiry_date[:-2]) == int(expiry_date[-2])
+
+        cipher = str(id_number) + str(birth_date) + str(expiry_date[:-1])
+        total_check_is_valid = self.level4_calculate_checksum(cipher) == int(total_check_number)
+
+        if id_number_is_valid == True and birth_date_is_valid == True and expiry_date_is_valid == True and total_check_is_valid == True:
+            return True
+        else:
+            return False
+
     def level4_calculate_checksum(self, cipher):
         try:
             letter_conversion = {
-                '1':'1','2':'2','3':'3','4':'4','5':'5','6':'6','7':'7','8':'8','9':'9','0':'0',
-                'A':'10','B':'11','C':'12','D':'13','E':'14','F':'15','G':'16','H':'17','I':'18',
-                'J':'19','K':'20','L':'21','M':'22','N':'23','O':'24','P':'25','Q':'26','R':'27',
-                'S':'28','T':'29','U':'30','V':'31','W':'32','X':'33','Y':'34','Z':'35'
+                '1': '1', '2': '2', '3': '3', '4': '4', '5': '5', '6': '6', '7': '7', '8': '8', '9': '9', '0': '0',
+                'A': '10', 'B': '11', 'C': '12', 'D': '13', 'E': '14', 'F': '15', 'G': '16', 'H': '17', 'I': '18',
+                'J': '19', 'K': '20', 'L': '21', 'M': '22', 'N': '23', 'O': '24', 'P': '25', 'Q': '26', 'R': '27',
+                'S': '28', 'T': '29', 'U': '30', 'V': '31', 'W': '32', 'X': '33', 'Y': '34', 'Z': '35'
             }
 
             position = 1
             sum = 0
-            multiply7 = [x for x in range(1,40,3)]
-            multiply3 = [x for x in range(2,40,3)]
-            multiply1 = [x for x in range(3,40,3)]
+            multiply7 = [x for x in range(1, 40, 3)]
+            multiply3 = [x for x in range(2, 40, 3)]
+            multiply1 = [x for x in range(3, 40, 3)]
 
             for character in cipher:
                 if multiply7.count(position) > 0:
@@ -379,6 +398,32 @@ class Elvira(EscapeRoom):
 
         except:
             return "Error calculating checksum!"
+
+    def level6_crack_authorization(self, name_choice):
+        if self.level6_load_database_from_web(
+                "https://pythonescaperoom.soeren-steinberg.de/alert.db") == True and os.path.exists(
+                "alert.db") and os.access("alert.db", os.R_OK):
+
+            db = sqlite3.connect("alert.db")
+            cursor = db.cursor()
+            cursor.execute(
+                "SELECT firstname, lastname, securitycard_number, pin, active, date_of_expiry FROM securitycard_owner INNER JOIN securitycard on securitycard.sc_id = securitycard_owner.sc_id WHERE firstname = ? and active = 1 and date_of_expiry >= datetime('now')",
+                (name_choice,))
+            resultset = cursor.fetchall()
+            db.close()
+
+            if resultset:
+                json_list = []
+                for result in resultset:
+                    json_dic = {}
+                    json_dic['firstname'] = result[0]
+                    json_dic['lastname'] = result[1]
+                    json_dic['securitycard_number'] = result[2]
+                    json_dic['pin'] = result[3]
+                    json_list.append(json_dic)
+                return json.dumps(json_list[0])
+        else:
+            print("Error - Failed to open database!")
 
     def level6_load_database_from_web(self, url):
         try:
