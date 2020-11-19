@@ -2,6 +2,8 @@ import random
 import string
 import json
 import os.path
+import sqlite3
+import requests
 from EscapeRoom import EscapeRoom
 
 if os.path.isfile('rezept.txt'):
@@ -19,6 +21,8 @@ class Elvira(EscapeRoom):
         self.add_level(self.create_level1())
         self.add_level(self.create_level2())
         self.add_level(self.create_level3())
+        self.add_level(self.create_level4())
+        #self.add_level(self.create_level3())
 
 
     def create_level1(self):
@@ -69,12 +73,13 @@ class Elvira(EscapeRoom):
 
         if level == 1:
             task_messages = [
-                "\"Du hast dein Handy entsprerrt!!! Nice! 1089 Hammerzahl und mega belastend wenn man drüber nachdenkt\"" ,
+                "\"Du hast dein Handy entsprerrt!!! Nice! 1089 magische Zahl und mega belastend wenn man drüber nachdenkt\"" ,
                 "Belastend war das Wort, welches ihm bei seinem Vorgesetztem Santa Claus einfiel.",
                 "\"Wenn du nacher deinen Mantel hier abholst, bringst mir bitte was ausm Rewe mit?\"",
                 "\"Weil du so auf Rätsel stehst hab ich dir meinen Wunsch auf dein Handy gehext. Verstehste Hex Hex! Hihi!",
-                "Aber ntürlich nicht auf die simple Art. Ein bestimmtes Zeichen aus jedem Feld ergibt die Lösung",
-                "Welches Zeichen? Ok kleiner Tipp: Potenziere die die magische Zahl bis du genug Ziffern hast um aus jedem Feld ein Zeichen auswählen zu können.\"",
+                "Aber ntürlich nicht auf die simple Art. Ein bestimmtes Zeichen aus jedem Feld ergibt die verhext Lösung",
+                "Welches Zeichen? Ok kleiner Tipp: Bilde die Potenz von 1089 bis das Ergebnis genügend Ziffern hat um aus jeden Feld ein Zeichen auszuscheiden.",
+                "Dann füge die Zeichen zusammen bevor du sie entzauberst",
                 f": <b> {liste} </b ",
                 "Genau Rätsel... das war der Grund warum er diesen Job gewählt hatte... Nicht, dass er nur einmal im Jahr arbeiten musste!",
                 "Die Spielzeugproduktion hatte er vor Jahren outgesourct und wurde durch Lizenzeinnahmen finanziert",
@@ -96,10 +101,11 @@ class Elvira(EscapeRoom):
 
         else:
             task_messages = [
-                "\"Verdammt Peter\" Anmerkung des Erzählers: Peter hieß sein Einhorn Hüpftier \"Du hast seine seine Zugangskarte\"",
-                "Würde er seine Zugangskarte nicht holen würden weder fossile Brennstoffe noch Kariusverursachende Substanzen in saubere Schuhe gestecken werden",
-                "",
-                "",
+                "Jetzt muss ich nur noch dafür sorgen, dass er morgen beim Rewe vorbeischaut. Er sollte aber wach sein und nicht mehr im Halbschlaf.... Ich lasse ihn ein wenig rätseln, das macht wach.",
+                "Nach wenigen min war das Rätsel fertig und der letzte Test ob das ganze funktionierte stand an.",
+                "Er schrieb den Text für den Test nicht neben dem Spiegel!",
+                "Bilde die Potenz von 1089 bis das Ergebnis genügend Ziffern hat um aus jeden Feld ein Zeichen auszuscheiden.",
+                "Dann muss nur noch der Reihenfolge nach die Zeichen ausschneiden, zusammensetzen. Sehr gut. Letzter Test und dann ab mit der Nachricht."
 
                 ]
 
@@ -151,6 +157,52 @@ class Elvira(EscapeRoom):
                 "Die Antwort ist nicht Nein ;)"
             ]
         return {"task_messages": task_messages, "hints": hints, "solution_function": self.level3, "data": meng}
+
+    def create_level4(self):
+        if run == 1:
+            json_choice = random.choice(["{\"identitycard\":[{\"idnumber\":\"L2200AVWO2\",\"birthdate\":\"9504095\",\"expirydate\":\"2210012D\",\"totalchecknumber\":\"2\"}]}",
+                                        "{\"identitycard\":[{\"idnumber\":\"N4OBZNGAA4\",\"birthdate\":\"8601012\",\"expirydate\":\"2809078D\",\"totalchecknumber\":\"4\"}]}"])
+            task_messages = [
+                "Der Pin lautet 0 3 5 1. Das war einfach. Endlich ist die Musikanlage still. Du hörst ein Aufschrei hinter dir: \"Hey, was machen Sie denn da? Das ist kein Spielzeug.\"",
+                "Das sind die Worte, die dich aufhorchen lassen, damit du schleunigst das Weite suchst. Jetzt schnell die Schnapspraline holen und ab an die Kasse damit.",
+                "Gleich geschafft, denkst du dir. Doch Moment.<br><br>",
+                "Die Dame an der Kasse scannt die Schnapspraline, es ertönt ein „piep“, sie schaut die Schnapspraline an und sagt: \"Junger Herr, ehm, so wie ich das seh ist da Alkohol drin.",
+                "Alkohol darf ich Ihnen nur verkaufen, wenn Sie mir beweisen, dass Sie bereits das 18. Lebensjahr vollendet haben. Ansonsten bleibt diese Schnapspraline hier bei mir!\"<br><br>",
+                "Lächerlich denkst du dir, die macht es dir aber schwer. Vermutlich will die alte Dame nur an meinen Namen und meine Adresse heran, aber was soll’s.",
+                "Du greifst nach deinem Personalausweis und reichst ihr diesen. Ihre Brillengläser sind dick wie ein Aschenbecher. Sie verzieht die Nase und schaut sich",
+                "die maschinenlesbare Zone <b>"+json_choice+"</b> des",
+                "Personalausweises ganz genau an.<br><br>",
+                "\"Junger Herr, ich kann zwar sehen, dass Sie das 18. Lebensjahr vollendet haben. Jedoch ist der Personalausweis ganz klar eine Fälschung. Ziemlich frech von Ihnen.\" \"Unmöglich\",",
+                "erklärst du ihr \"mein Personalausweis ist keine Fälschung.\" Die kecke Dame ergänzt: \"Dann beweisen Sie mir, dass dieser echt ist. Wenn Sie dies zeigen, dann bekommen Sie Ihre",
+                "Schnapspraline und können den Laden verlassen.\"<br><br>",
+                "Dann beweise es der Dame, das es sich bei der maschinenlesbaren Zone um gültige Feldinhalte handelt!"
+            ]
+            hints = [
+                "Bei dem Element \"idnumber\" handelt es sich um die Ausweisnummer plus eine Prüfziffer, \
+                bei dem Element \"birthdate\" um das Geburtsdatum im Format JJMMTT plus eine Prüfziffer, \
+                bei dem Element \"expirydate\" um das Ablaufdatum des Ausweises im Format JJMMTT plus eine Prüfziffer gefolgt von einem Länderkennzeichen und \
+                bei dem Element \"totalchecknumber\" um eine Prüfziffer über die zuvor genannten drei Elemente (außer dem Länderkennzeichen)!",
+                "Für alle Daten wird der gleiche Algorithmus verwendet. Jede Ziffer wird links beginnend, alternierend mit 7, 3, 1 multipliziert und addiert, \
+                und dann Modulo 10 genommen. Für die Gesamtprüfziffer werden alle drei Daten (inklusive der Prüfziffer, aber ohne Länderkennzeichen) \
+                aneinandergehängt und ebenfalls der Algorithmus angewandt.",
+                "Buchstaben müssen umgewandelt werden! A = 10, B = 11, ..."
+            ]
+        else:
+            json_choice = random.choice(["{\"identitycard\":[{\"idnumber\":\"L9VXUWTCA7\",\"birthdate\":\"7611072\",\"expirydate\":\"2408035D\",\"totalchecknumber\":\"2\"}]}",
+                                        "{\"identitycard\":[{\"idnumber\":\"T6VXYQYZU5\",\"birthdate\":\"9107038\",\"expirydate\":\"2104212D\",\"totalchecknumber\":\"9\"}]}"])
+            task_messages = [
+                "Bester Tag ever. Er konnte sich den verkaterten Zottel bildlich vorstellen. Frau Speckmann hatte er gebrieft,<br>",
+                "sie würde ihn ein wenig aufhalten, während er prüft ob seine Playlist noch läuft.<br>",
+                "Bei Frau Speckmann kaufte er häufig für sein Leibgericht ein, falscher Hase. Sie hatten sich ein paar mal auf<br>",
+                "einen Kaffee getroffen und dabei hatte Sie ihm gezeigt wie man schlecht gefälschte Ausweise in der maschinenlesbaren Zone erkennt.<br><br>",
+                "Wie ging dass doch gleich bei nachfolgendem Ausweis?<br><br><b>"+json_choice+"</b>"
+            ]
+            hints = [
+                "Der Algorithmus sowie die Bedeutung der Feldinhalte der maschinenlesbaren Zone sollten dir noch aus dem vorherigen Durchlauf des Escape Rooms bekannt sein :)",
+            ]
+        return {"task_messages": task_messages, "hints": hints, "solution_function": self.level4_check_identity_card_validity, "data": json_choice}
+
+
 
     ### SOLUTIONS ###
 
@@ -245,4 +297,32 @@ class Elvira(EscapeRoom):
                 file.write(rezp2)
             return ant
 
+    def level4_calculate_checksum(self, cipher):
+        try:
+            letter_conversion = {
+                '1':'1','2':'2','3':'3','4':'4','5':'5','6':'6','7':'7','8':'8','9':'9','0':'0',
+                'A':'10','B':'11','C':'12','D':'13','E':'14','F':'15','G':'16','H':'17','I':'18',
+                'J':'19','K':'20','L':'21','M':'22','N':'23','O':'24','P':'25','Q':'26','R':'27',
+                'S':'28','T':'29','U':'30','V':'31','W':'32','X':'33','Y':'34','Z':'35'
+            }
+
+            position = 1
+            sum = 0
+            multiply7 = [x for x in range(1,40,3)]
+            multiply3 = [x for x in range(2,40,3)]
+            multiply1 = [x for x in range(3,40,3)]
+
+            for character in cipher:
+                if multiply7.count(position) > 0:
+                    sum = sum + int(letter_conversion[character]) * 7
+                if multiply3.count(position) > 0:
+                    sum = sum + int(letter_conversion[character]) * 3
+                if multiply1.count(position) > 0:
+                    sum = sum + int(letter_conversion[character]) * 1
+                position = position + 1
+
+            return sum % 10
+
+        except:
+            return "Error calculating checksum!"
 
