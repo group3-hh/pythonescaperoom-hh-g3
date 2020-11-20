@@ -14,7 +14,6 @@ else:
 
 class Elvira(EscapeRoom):
 
-
     def __init__(self):
         super().__init__()
         self.set_metadata("group", __name__)
@@ -153,7 +152,7 @@ class Elvira(EscapeRoom):
             "Wichtig: Beginne vorne mit der 1 zu zählen ",
             "Gib den dreistelligen Pin ein"
         ]
-        return {"task_messages": task_messages, "hints": hints, "solution_function": self.level3, "data": zettel}
+        return {"task_messages": task_messages, "hints": hints, "solution_function": self.level1, "data": zettel}
 
     def create_level4(self):
         if run == 1:
@@ -285,8 +284,6 @@ class Elvira(EscapeRoom):
             ]
         return {"task_messages": task_messages, "hints": hints, "solution_function": self.level7, "data": meng}
 
-
-
     ### SOLUTIONS ###
 
     def level1(self,numbers):
@@ -346,10 +343,26 @@ class Elvira(EscapeRoom):
         sum = 0
         for x in sentence:
             sum = sum + dictionary[x]
-
+            # print(sum)
             binary = bin(sum)[2:]
+            # print(binary)
+            # print(compress(binary))
 
         return binary
+
+    def level3(self, zahl):
+        whole_number = 0
+        first_number = 1
+        finish_number = []
+
+        for element in zahl:
+            if element != first_number:
+                finish_number.append(whole_number)
+                whole_number = 0
+            whole_number += 1
+            first_number = element
+        finish_number.append(whole_number)
+        return finish_number
 
     def level4_check_identity_card_validity(self, json_choice):
         json_deserialization = json.loads(json_choice)

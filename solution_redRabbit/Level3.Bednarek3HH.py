@@ -8,5 +8,23 @@ def run(zettel):
     sum = 0
     for x in sentence:
         sum = sum + dictionary[x]
+        print(sum)
         binary = bin(sum)[2:]
+        print(binary)
+        print(compress(binary))
+
     return binary
+            
+def run(zahl):
+    whole_number = 0
+    first_number = 1
+    finish_number = []
+   
+    for element in zahl:
+        if element != first_number:
+            finish_number.append(whole_number)
+            whole_number = 0
+        whole_number += 1
+        first_number = element
+    finish_number.append(whole_number) 
+    return finish_number
