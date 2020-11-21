@@ -12,7 +12,7 @@ else:
     run = 1
 
 
-class Elvira(EscapeRoom):
+class RedRabbit(EscapeRoom):
 
     def __init__(self):
         super().__init__()
@@ -36,7 +36,8 @@ class Elvira(EscapeRoom):
                 "Mit brummenden Schädel erwachte der rot bemantelte Mann. Nie wieder den selbgepanschten Eierlikör des langorhigen schwor er sich",
                 "Verdammt dunkel hier, wie war noch die Pin seines Handy? Natürlich hatte dieser pelzige Eierdieb wieder seine Pin geändert",
                 "Und wie beim letztem Mal klebte ein Zettel an seinem Handy",
-                f"Merke dir folgende Zahlen: <b> {numbers} </b ",
+                "Merke dir folgende Zahlen:",
+                f"<b> {numbers} </b ",
                 "Suche dir die größte gerade dreistellige Zahl die kein Zahlenpalindrom ist und deren Umkehrzahl kleiner ist als sie selbst.",
                 "Subtrahiere davon deren Umkehrzahl und addiere zu diesem Ergebnis wiederum die Umkehrzahl des Ergebnisses.",
                 "Und zack da ist deine Pin",
@@ -50,10 +51,11 @@ class Elvira(EscapeRoom):
                 "Ok, noch nen lütten... aber dann ab ist Schluss ",
                 "\"Hui, der is ja komplett weggetreten muahahah... Morgen muss er Arbeiten... Ich mal ihm was ins Gesicht\"",
                 "\"Nein warte... das wäre kindisch.... Ich rasier ihm den Bart ab.... Nein warte ... das hatten wir schon und er wäre fast gefeuert worden",
-                "\"Ok erstmal sein Handy Pin ändern\"",
+                "\"Ok erstmal seine Handy Pin ändern\"",
                 "Er wusste, dass sein Kompanion Rätsel hasste, warum sonst waren alle Sudoku im Bad unangetastet?",
                 "Also würden er ein paar Rätsel testen, aber vorher noch nen lütten",
-                f"Merke dir folgende Zahlen: <b> {numbers} </b ",
+                "Merke dir folgende Zahlen:",
+                f"<b> {numbers} </b ",
                 "Suche dir die kleinste ungerade dreistellige Zahl die kein Zahlenpalindrom ist und deren Umkehrzahl kleiner ist als sie selbst.",
                 "Subtrahiere davon deren Umkehrzahl und addiere zu diesem Ergebnis wiederum die Umkehrzahl des Ergebnisses.",
                 "Und zack da ist deine Pin",
@@ -70,18 +72,18 @@ class Elvira(EscapeRoom):
         return {"task_messages": task_messages, "hints": hints, "solution_function": self.level1, "data": numbers}
 
     def create_level2(self):
-        liste = ['5663686e61' ,'454255a547' ,'5663666e61' , '5ac4e54e45' , '6adc4e4445','429c434b45','c45256a45','57d64c46c5','5a41484d65','4a4f1b4552','27d74c43c5' ,'5a4f464542 ','46796e6573 ','64f6727065 ','4b7c49434b ','624c49334b','666c67734b' ,'505041545a','4bd6544562','1c414e5a45','4c454e5645','ebc4534947','4b6c495050','686c696666','6b6c616d6d','5a31554e53','5a61756e73','7a61756e73']
 
         if run == 1:
+            liste = ['5663686e61', '454255a547', '5663666e61', '5ac4e54e45', '6adc4e4445', '429c434b45', 'c45256a45','57d64c46c5', '5a41484d65', '4a4f1b4552', '27d74c43c5', '5a4f464542 ', '46796e6573 ','64f6727065 ', '4b7c49434b ', '624c49334b', '666c67734b', '505041545a', '4bd6544562', '1c414e5a45','4c454e5645', 'ebc4534947', '4b6c495050', '686c696666', '6b6c616d6d', '5a31554e53', '5a61756e73','7a61756e73']
+
             task_messages = [
                 "\"Du hast dein Handy entsprerrt!!! Nice! 1089 magische Zahl und mega belastend wenn man drüber nachdenkt\"" ,
                 "Belastend war das Wort, welches ihm bei seinem Vorgesetztem Santa Claus einfiel.",
                 "\"Wenn du nacher deinen Mantel hier abholst, bringst mir bitte was ausm Rewe mit?\"",
-                "\"Weil du so auf Rätsel stehst hab ich dir meinen Wunsch auf dein Handy gehext. Verstehste Hex Hex! Hihi!",
-                "Aber ntürlich nicht auf die simple Art. Ein bestimmtes Zeichen aus jedem Feld ergibt die verhext Lösung",
-                "Welches Zeichen? Ok kleiner Tipp: Bilde die Potenz von 1089 bis das Ergebnis genügend Ziffern hat um aus jeden Feld ein Zeichen auszuscheiden.",
-                "Dann füge die Zeichen zusammen bevor du sie entzauberst",
-                f": <b> {liste} </b ",
+                "\"Weil du so auf Rätsel stehst hab ich dir meinen Wunsch auf dein Handy gehext.!",
+                "Aber ntürlich nicht auf die simple Art. Bilde die Potenz von 1089 bis das Ergebnis genügend Ziffern hat um aus jeden Feld ein Zeichen auszuscheiden.",
+                "Nutze die Ziffern um die richtigen Zeichen in den Feldern zu finde und dann füge die Zeichen zusammen bevor du sie entzauberst",
+                f"<b> {liste} </b ",
                 "Genau Rätsel... das war der Grund warum er diesen Job gewählt hatte... Nicht, dass er nur einmal im Jahr arbeiten musste!",
                 "Die Spielzeugproduktion hatte er vor Jahren outgesourct und wurde durch Lizenzeinnahmen finanziert",
                 "welche größtenteils durch einen Namenhaften Getränkehersteller hereinsprudelten.",
@@ -89,27 +91,25 @@ class Elvira(EscapeRoom):
                 ]
 
             hints = [
-                "Er verhexte seinen Wunsch und verbinärte ihn nicht",
-                "Sieht das Rätsel nicht aus wie eine Liste mit verschiedenen Values?",
                 "1089**2 sind 1185921,und damit 7 Zeichen, die Liste hat aber mehr Werte ",
-                "Du hat einen Wert der mit der Anzahl der Felder in der Liste über einstimmt?",
                 "Wenn du das richtige Ergebnis hast, verrät dir die erste Ziffer den geuchsten Wert im ersten Feld, die 2. Ziffer der?",
-                "Er schrieb den Wunsch vor dem Spiegel!",
+                "Do we count from 0 or from 1 ?",
+                "Er verhexte seinen Wunsch und verbinärte ihn nicht",
+                "Er schrieb den Wunsch vor dem Spiegel bevor er ihn verhexte!",
                 "Verhext nicht war? Wenn man die Werte gegen den Spiegel hält -> 353686e6160737072716c696e656",
                 "return Schnapspraline"
 
             ]
 
         else:
+            liste = ['5653686e61', '434255a547', '5663666e61', '5ac4354e45', '6adc4e4445', '428c434b45', 'c45256a45','57d64c46e5', '5a41484d65', '4a4f1b4552', '27d74c43c5', '5a4f464540', '46796e6573', '64f6720365','4b7c49434b', '624c49034b', '666c6774b', '626c67734b', '505041546a', '1bd6544562', '4c454e5645','cbc4534947', '4b6c495050', '696c696666', '6b6c616d6d', '5ae1554e53', '6a61756e73', '7a61756e75']
             task_messages = [
                 "Jetzt muss ich nur noch dafür sorgen, dass er morgen beim Rewe vorbeischaut. Er sollte aber wach sein und nicht mehr im Halbschlaf.... Ich lasse ihn ein wenig rätseln, das macht wach.",
                 "Nach wenigen min war das Rätsel fertig und der letzte Test ob das ganze funktionierte stand an.",
-                "Er schrieb den Text für den Test nicht neben dem Spiegel!",
+                f"<b> {liste} </b ",
                 "Bilde die Potenz von 1089 bis das Ergebnis genügend Ziffern hat um aus jeden Feld ein Zeichen auszuscheiden.",
                 "Dann muss nur noch der Reihenfolge nach die Zeichen ausschneiden, zusammensetzen. Sehr gut. Letzter Test und dann ab mit der Nachricht."
-
                 ]
-
 
             hints = [
                 "Sieht genaus so aus wie beim ersten Mal? Lies den Text noch mal",
@@ -127,34 +127,102 @@ class Elvira(EscapeRoom):
                 <br> Well, it's been a year It doesn't surprise me ( Merry Christmas ! )  \
                 <br> I wrapped it up and sent it with a note saying, I love you, I meant it now, I know what a fool I've been but if you kissed me now I know you'd fool me again \
                 Last Christmas, I gave you my heart But the very next day you gave it away This year, to save me from tears I'll give it to someone special"
+        if run == 1:
 
-        task_messages = [
-            " Im Rewe angekommen wird es nicht besser. Lautstark dröhnt das Lied, welches keiner mehr hören kann, aus der Musikanlage.",
-            " Die Musik ist so laut, dass dein Kopf förmlich platzt. Und das schlimmste: der Ohrwurm ist garantiert. Daher begibst du dich ",
-            " sofort auf die Suche nach der Musikanlage, welche du hinter der Tiefkühltheke findest. Je näher du kommst, desto lauter dröhnt die Musik. ",
-            " Aufhören , schreist du die Musikanlage an, jedoch passiert nichts. Hätte ich bloß nicht so viel getrunken mit dem Langohrhasen, ",
-            " dann hätte ich auch sofort eine Idee gehabt, das Gerät auszustellen. Doch dann siehst du die Erlösung: um die Musik auszuschalten ",
-            " musst du lediglich einen Pin von 3 Zahlen eingeben. Easy denkst du. Doch wie kriegst du den Pin heraus? ",
-            " Auf einem Zettel steht:<br><br><b>" + zettel + "<br><br>"
+            task_messages = [
+                " Im Rewe angekommen wird es nicht besser. Lautstark dröhnt das Lied, welches keiner mehr hören kann, aus der Musikanlage.",
+                " Die Musik ist so laut, dass dein Kopf förmlich platzt. Und das schlimmste: der Ohrwurm ist garantiert. Daher begibst du dich ",
+                " sofort auf die Suche nach der Musikanlage, welche du hinter der Tiefkühltheke findest. Je näher du kommst, desto lauter dröhnt die Musik. ",
+                " Aufhören , schreist du die Musikanlage an, jedoch passiert nichts. Hätte ich bloß nicht so viel getrunken mit dem Langohrhasen, ",
+                " dann hätte ich auch sofort eine Idee gehabt, das Gerät auszustellen. Doch dann siehst du die Erlösung: um die Musik auszuschalten ",
+                " musst du lediglich einen Pin von 3 Zahlen eingeben. Easy denkst du. Doch wie kriegst du den Pin heraus? ",
+                " Auf einem Zettel steht:<br><br><b>" + zettel + "<br><br>"
+    
+                                                                 "<br>Gesamt: Last Christmas I gave you my heart",
+                " Binärzahl",
+                " Binärzahl komprimieren",
+                " Alles klar, dann mal los!"
+            ]
+            hints = [
+                "Zähle nach, wie oft welcher Buchstabe in dem Text, der auf dem Zettel steht, vorkommt",
+                "Der Text beginnt mit Last und endet mit special",
+                "Rechne die Anzahl der Zahlen, die sich hinter jedem einzelnen Buchstaben in diesem Satz Last Christmas I'll give you my heart zusammen",
+                "Nun berechne aus der Dezimalzahl eine Binärzahl",
+                "Dir fällt auf, dass der Pin aus 3 Zahlen besteht, die Binärzahl jedoch aus 9 Zahlen ",
+                "Komprimiere daher die Binärzahl ",
+                "Wichtig: Beginne vorne mit der 1 zu zählen ",
+                "Gib den dreistelligen Pin ein"
+            ]
+        else:
+            task_messages = [
+                "Wie gut das heute alles in der Cloud läuf. Als er letztes Jahr auf seiner Tour war fand er den Zettel mit den Zugangsdaten.",
+                "Und seit dem Tag konnte er mit seinem Spotifyaccount mit den Musikanlagen in sämtlichen Rewemärkten verknüpfen.",
+                "Und er hatte eine Playlist speziell für diesen Tag. 24/7 never ending:",
+                " Auf einem Zettel steht:<br><br><b>" + zettel + "<br><br>"
 
-                                                             "<br>Gesamt: Last Christmas I gave you my heart",
-            " Binärzahl",
-            " Binärzahl komprimieren",
-            " Alles klar, dann mal los!"
-        ]
-        hints = [
-            "Zähle nach, wie oft welcher Buchstabe in dem Text, der auf dem Zettel steht, vorkommt",
-            "Der Text beginnt mit Last und endet mit special",
-            "Rechne die Anzahl der Zahlen, die sich hinter jedem einzelnen Buchstaben in diesem Satz Last Christmas I'll give you my heart zusammen",
-            "Nun berechne aus der Dezimalzahl eine Binärzahl",
-            "Dir fällt auf, dass der Pin aus 3 Zahlen besteht, die Binärzahl jedoch aus 9 Zahlen ",
-            "Komprimiere daher die Binärzahl ",
-            "Wichtig: Beginne vorne mit der 1 zu zählen ",
-            "Gib den dreistelligen Pin ein"
-        ]
-        return {"task_messages": task_messages, "hints": hints, "solution_function": self.level1, "data": zettel}
+                                                                 "<br>Gesamt: Last Christmas I gave you my heart",
+                " Binärzahl",
+                " Binärzahl komprimieren",
+                " Alles klar, dann mal los!"
+            ]
+            hints = [
+                "Zähle nach, wie oft welcher Buchstabe in dem Text, der auf dem Zettel steht, vorkommt",
+                "Der Text beginnt mit Last und endet mit special",
+                "Rechne die Anzahl der Zahlen, die sich hinter jedem einzelnen Buchstaben in diesem Satz Last Christmas I'll give you my heart zusammen",
+                "Nun berechne aus der Dezimalzahl eine Binärzahl",
+                "Dir fällt auf, dass der Pin aus 3 Zahlen besteht, die Binärzahl jedoch aus 9 Zahlen ",
+                "Komprimiere daher die Binärzahl ",
+                "Wichtig: Beginne vorne mit der 1 zu zählen ",
+                "Gib den dreistelligen Pin ein"
+            ]
+
+        return {"task_messages": task_messages, "hints": hints, "solution_function": self.level3, "data": zettel}
 
     def create_level4(self):
+        if run == 1:
+            json_choice = random.choice(["{\"identitycard\":[{\"idnumber\":\"L2200AVWO2\",\"birthdate\":\"9504095\",\"expirydate\":\"2210012D\",\"totalchecknumber\":\"2\"}]}",
+                                        "{\"identitycard\":[{\"idnumber\":\"N4OBZNGAA4\",\"birthdate\":\"8601012\",\"expirydate\":\"2809078D\",\"totalchecknumber\":\"4\"}]}"])
+            task_messages = [
+                "Der Pin lautet 0 3 5 1. Das war einfach. Endlich ist die Musikanlage still. Du hörst ein Aufschrei hinter dir: \"Hey, was machen Sie denn da? Das ist kein Spielzeug.\"",
+                "Das sind die Worte, die dich aufhorchen lassen, damit du schleunigst das Weite suchst. Jetzt schnell die Schnapspraline holen und ab an die Kasse damit.",
+                "Gleich geschafft, denkst du dir. Doch Moment.<br><br>",
+                "Die Dame an der Kasse scannt die Schnapspraline, es ertönt ein „piep“, sie schaut die Schnapspraline an und sagt: \"Junger Herr, ehm, so wie ich das seh ist da Alkohol drin.",
+                "Alkohol darf ich Ihnen nur verkaufen, wenn Sie mir beweisen, dass Sie bereits das 18. Lebensjahr vollendet haben. Ansonsten bleibt diese Schnapspraline hier bei mir!\"<br><br>",
+                "Lächerlich denkst du dir, die macht es dir aber schwer. Vermutlich will die alte Dame nur an meinen Namen und meine Adresse heran, aber was soll’s.",
+                "Du greifst nach deinem Personalausweis und reichst ihr diesen. Ihre Brillengläser sind dick wie ein Aschenbecher. Sie verzieht die Nase und schaut sich",
+                "die maschinenlesbare Zone <b>"+json_choice+"</b> des",
+                "Personalausweises ganz genau an.<br><br>",
+                "\"Junger Herr, ich kann zwar sehen, dass Sie das 18. Lebensjahr vollendet haben. Jedoch ist der Personalausweis ganz klar eine Fälschung. Ziemlich frech von Ihnen.\" \"Unmöglich\",",
+                "erklärst du ihr \"mein Personalausweis ist keine Fälschung.\" Die kecke Dame ergänzt: \"Dann beweisen Sie mir, dass dieser echt ist. Wenn Sie dies zeigen, dann bekommen Sie Ihre",
+                "Schnapspraline und können den Laden verlassen.\"<br><br>",
+                "Dann beweise es der Dame, das es sich bei der maschinenlesbaren Zone um gültige Feldinhalte handelt!"
+            ]
+            hints = [
+                "Bei dem Element \"idnumber\" handelt es sich um die Ausweisnummer plus eine Prüfziffer, \
+                bei dem Element \"birthdate\" um das Geburtsdatum im Format JJMMTT plus eine Prüfziffer, \
+                bei dem Element \"expirydate\" um das Ablaufdatum des Ausweises im Format JJMMTT plus eine Prüfziffer gefolgt von einem Länderkennzeichen und \
+                bei dem Element \"totalchecknumber\" um eine Prüfziffer über die zuvor genannten drei Elemente (außer dem Länderkennzeichen)!",
+                "Für alle Daten wird der gleiche Algorithmus verwendet. Jede Ziffer wird links beginnend, alternierend mit 7, 3, 1 multipliziert und addiert, \
+                und dann Modulo 10 genommen. Für die Gesamtprüfziffer werden alle drei Daten (inklusive der Prüfziffer, aber ohne Länderkennzeichen) \
+                aneinandergehängt und ebenfalls der Algorithmus angewandt.",
+                "Buchstaben müssen umgewandelt werden! A = 10, B = 11, ..."
+            ]
+        else:
+            json_choice = random.choice(["{\"identitycard\":[{\"idnumber\":\"L9VXUWTCA7\",\"birthdate\":\"7611072\",\"expirydate\":\"2408035D\",\"totalchecknumber\":\"2\"}]}",
+                                        "{\"identitycard\":[{\"idnumber\":\"T6VXYQYZU5\",\"birthdate\":\"9107038\",\"expirydate\":\"2104212D\",\"totalchecknumber\":\"9\"}]}"])
+            task_messages = [
+                "Bester Tag ever. Er konnte sich den verkaterten Zottel bildlich vorstellen. Frau Speckmann hatte er gebrieft,<br>",
+                "sie würde ihn ein wenig aufhalten, während er prüft ob seine Playlist noch läuft.<br>",
+                "Bei Frau Speckmann kaufte er häufig für sein Leibgericht ein, falscher Hase. Sie hatten sich ein paar mal auf<br>",
+                "einen Kaffee getroffen und dabei hatte Sie ihm gezeigt wie man schlecht gefälschte Ausweise in der maschinenlesbaren Zone erkennt.<br><br>",
+                "Wie ging dass doch gleich bei nachfolgendem Ausweis?<br><br><b>"+json_choice+"</b>"
+            ]
+            hints = [
+                "Der Algorithmus sowie die Bedeutung der Feldinhalte der maschinenlesbaren Zone sollten dir noch aus dem vorherigen Durchlauf des Escape Rooms bekannt sein :)",
+            ]
+        return {"task_messages": task_messages, "hints": hints, "solution_function": self.level4_check_identity_card_validity, "data": json_choice}
+
+    def create_level5(self):
         if run == 1:
             json_choice = random.choice(["{\"identitycard\":[{\"idnumber\":\"L2200AVWO2\",\"birthdate\":\"9504095\",\"expirydate\":\"2210012D\",\"totalchecknumber\":\"2\"}]}",
                                         "{\"identitycard\":[{\"idnumber\":\"N4OBZNGAA4\",\"birthdate\":\"8601012\",\"expirydate\":\"2809078D\",\"totalchecknumber\":\"4\"}]}"])
@@ -286,7 +354,7 @@ class Elvira(EscapeRoom):
 
     ### SOLUTIONS ###
 
-    def level1(self,numbers):
+    def level1(self, numbers):
         counter = 0
         numbers.sort(reverse=True)
         gerade = [x for x in numbers if x % 2 == 0]
@@ -305,7 +373,7 @@ class Elvira(EscapeRoom):
         erg = sum + int(d)
         return erg
 
-    def level2(self,liste):
+    def level2(self, liste):
         pot = 2
         count = 0
         erg = ""
