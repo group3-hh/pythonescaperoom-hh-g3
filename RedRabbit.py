@@ -41,7 +41,9 @@ class RedRabbit(EscapeRoom):
             numbers.append(n)
         if run == 1:
             task_messages = [
-                "Mit brummenden Schädel erwachte der rot bemantelte Mann. Nie wieder den selbgepanschten Eierlikör des langorhigen schwor er sich",
+                "Mit brummenden Schädel erwachte der rot bemantelte Mann. Nie wieder den selbst gepanschten Eierlikör des langohrigen schwor er sich",
+                "Was ist heute bloß für ein Tag? Ach herrje, ein Arbeitstag. Wenn mein Vorgesetzter Santa Claus das sieht, dann bekomme ich ein dickes Problem.",
+                "Mal gucken, was ich heute noch besorgen soll für ihn. Er griff nach seinem Handy.",
                 "Verdammt dunkel hier, wie war noch die Pin seines Handy? Natürlich hatte dieser pelzige Eierdieb wieder seine Pin geändert",
                 "Und wie beim letztem Mal klebte ein Zettel an seinem Handy",
                 "Merke dir folgende Zahlen:",
@@ -72,9 +74,9 @@ class RedRabbit(EscapeRoom):
             ]
 
         hints = [
-            "Beispiel aus 321 wird die Umkehrzahl 123",
+            "Beispiel: aus 321 wird die Umkehrzahl 123",
             "Aus 99 würde 099 werden",
-            "Beispielberechnung: 321 - 123 = 198 daraus folgt 198 + 891",
+            "Beispielberechnung: 321 - 123 = 198 -> daraus folgt 198 + 891",
             "Falls sich eine 2. stellige Zahl aus der ersten Operation ergibt: 473 - 374 = 099 und 099 + 990",
         ]
         return {"task_messages": task_messages, "hints": hints, "solution_function": self.level1, "data": numbers}
@@ -85,11 +87,11 @@ class RedRabbit(EscapeRoom):
             liste = ['5663686e61', '454255a547', '5663666e61', '5ac4e54e45', '6adc4e4445', '429c434b45', 'c45256a45','57d64c46c5', '5a41484d65', '4a4f1b4552', '27d74c43c5', '5a4f464542 ', '46796e6573 ','64f6727065 ', '4b7c49434b ', '624c49334b', '666c67734b', '505041545a', '4bd6544562', '1c414e5a45','4c454e5645', 'ebc4534947', '4b6c495050', '686c696666', '6b6c616d6d', '5a31554e53', '5a61756e73','7a61756e73']
 
             task_messages = [
-                "\"Du hast dein Handy entsprerrt!!! Nice! 1089 magische Zahl und mega belastend wenn man drüber nachdenkt\"" ,
+                "\"Du hast dein Handy entsperrt!!! Nice! 1089 magische Zahl und mega belastend wenn man drüber nachdenkt\"" ,
                 "Belastend war das Wort, welches ihm bei seinem Vorgesetztem Santa Claus einfiel.",
-                "\"Wenn du nacher deinen Mantel hier abholst, bringst mir bitte was ausm Rewe mit?\"",
+                "\"Wenn du nachher deine Schicht beendet hast und deinen Mantel abholst, dann bring mir bitte was aus dem Rewe Raum mit?\"",
                 "\"Weil du so auf Rätsel stehst hab ich dir meinen Wunsch auf dein Handy gehext.!",
-                "Aber ntürlich nicht auf die simple Art. Bilde die Potenz von 1089 bis das Ergebnis genügend Ziffern hat um aus jeden Feld ein Zeichen auszuscheiden.",
+                "Aber natürlich nicht auf die simple Art. Bilde die Potenz von 1089 bis das Ergebnis genügend Ziffern hat um aus jeden Feld ein Zeichen auszuscheiden.",
                 "Nutze die Ziffern um die richtigen Zeichen in den Feldern zu finde und dann füge die Zeichen zusammen bevor du sie entzauberst",
                 f"<b> {liste} </b ",
                 "Genau Rätsel... das war der Grund warum er diesen Job gewählt hatte... Nicht, dass er nur einmal im Jahr arbeiten musste!",
@@ -105,6 +107,7 @@ class RedRabbit(EscapeRoom):
                 "Er verhexte seinen Wunsch und verbinärte ihn nicht",
                 "Er schrieb den Wunsch vor dem Spiegel bevor er ihn verhexte!",
                 "Verhext nicht war? Wenn man die Werte gegen den Spiegel hält -> 353686e6160737072716c696e656",
+                "Die Reihenfolge ist entscheidend. Hexwert zusammenbauen, in String umwandeln, spiegeln",
                 "return Schnapspraline"
 
             ]
@@ -112,7 +115,8 @@ class RedRabbit(EscapeRoom):
         else:
             liste = ['5653686e61', '434255a547', '5663666e61', '5ac4354e45', '6adc4e4445', '428c434b45', 'c45256a45','57d64c46e5', '5a41484d65', '4a4f1b4552', '27d74c43c5', '5a4f464540', '46796e6573', '64f6720365','4b7c49434b', '624c49034b', '666c6774b', '626c67734b', '505041546a', '1bd6544562', '4c454e5645','cbc4534947', '4b6c495050', '696c696666', '6b6c616d6d', '5ae1554e53', '6a61756e73', '7a61756e75']
             task_messages = [
-                "Jetzt muss ich nur noch dafür sorgen, dass er morgen beim Rewe vorbeischaut. Er sollte aber wach sein und nicht mehr im Halbschlaf.... Ich lasse ihn ein wenig rätseln, das macht wach.",
+                "Jetzt muss ich nur noch dafür sorgen, dass er morgen beim Rewe vorbeischaut. Ich schicke ihm eine Nachricht im Namen seines Chefs, dass sollte reichen.",
+                "Er sollte aber wach sein und nicht mehr im Halbschlaf.... Ich lasse ihn ein wenig rätseln, das macht wach.",
                 "Nach wenigen min war das Rätsel fertig und der letzte Test ob das ganze funktionierte stand an.",
                 f"<b> {liste} </b ",
                 "Bilde die Potenz von 1089 bis das Ergebnis genügend Ziffern hat um aus jeden Feld ein Zeichen auszuscheiden.",
@@ -302,12 +306,13 @@ class RedRabbit(EscapeRoom):
                     <br>The d Oxygen Oxygen r is Oxygen Phosphorus e Nitrogen ! "
 
             task_messages = [
-                "Das war Frau Speckmann am Telefon."
-                "Der Schnapspralinenkurier ist auf dem Weg."
-                "Ok, Zeit für das große Finale. "
-                "Nebelmaschiene ? Check."
-                "Einhorn ? Check."
-                "Stimmenmodulator? Check."
+                "Das war Frau Speckmann am Telefon.",
+                "Der Schnapspralinenkurier ist auf dem Weg.",
+                "Ok, Zeit für das große Finale. ",
+                "Nebelmaschiene ? Check.",
+                "Einhorn ? Check.",
+                "Stimmenmodulator? Check.",
+                "Wenn es läuft wie immer würde er, bevor er seinem Chef unter die Augen tritt, kurz in der Mitarbeiterküche halt machen",
 
                 "Gerade noch Zeit für eine letzte Generalprobe."
             ]
