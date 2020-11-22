@@ -8,16 +8,13 @@ def run(zettel):
     sum = 0
     for x in sentence:
         sum = sum + dictionary[x]
-        print(sum)
         binary = bin(sum)[2:]
-        print(binary)
-        print(compress(binary))
 
-    return binary
+    return compress(binary)
             
-def run(zahl):
+def compress(zahl):
     whole_number = 0
-    first_number = 1
+    first_number = "1"
     finish_number = []
    
     for element in zahl:

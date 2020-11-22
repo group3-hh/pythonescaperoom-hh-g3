@@ -381,7 +381,7 @@ class RedRabbit(EscapeRoom):
         length = len(liste)
         while (len(str(1089 ** pot))) != length:
             pot += 1
-            a = 1089 ** pot
+        a = 1089 ** pot
 
         temp_list = [int(x) for x in str(a)]
         temp_length = len(temp_list)

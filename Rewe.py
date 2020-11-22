@@ -1,23 +1,25 @@
 import random
 import string
+import csv
 from EscapeRoom import EscapeRoom
 
-class Rewe(EscapeRoom):
+class Rewe_Fertig(EscapeRoom):
 
     def __init__(self):
         super().__init__()
         self.set_metadata("Konsu", __name__)
         self.add_level(self.create_level1())
+        self.add_level(self.create_level2())
 
     ### LEVELS ###
 
     def create_level1(self):
         
         zettel = "Last Christmas, I gave you my heart but the very next day you gave it away . \
-                This year, to save me from tears I'll give it to someone special. <br> Last Christmas, I gave you my heart but the very next day you gave it away. <br> This year, to save me from tears I'll give it to someone special . \
-                <br> Once bitten and twice shy I keep my distance but you still catch my eye tell me, baby do you recognize me? \
-                <br> Well, it's been a year It doesn't surprise me ( Merry Christmas ! )  \
-                <br> I wrapped it up and sent it with a note saying, I love you, I meant it now, I know what a fool I've been but if you kissed me now I know you'd fool me again \
+                This year, to save me from tears I'll give it to someone special. Last Christmas, I gave you my heart but the very next day you gave it away. This year, to save me from tears I'll give it to someone special . \
+                Once bitten and twice shy I keep my distance but you still catch my eye tell me, baby do you recognize me? \
+                Well, it's been a year It doesn't surprise me ( Merry Christmas ! )  \
+                I wrapped it up and sent it with a note saying, I love you, I meant it now, I know what a fool I've been but if you kissed me now I know you'd fool me again \
                 Last Christmas, I gave you my heart But the very next day you gave it away This year, to save me from tears I'll give it to someone special"
         
         task_messages = [
@@ -45,10 +47,52 @@ class Rewe(EscapeRoom):
             "Gib den dreistelligen Pin ein"
         ]
         return {"task_messages": task_messages, "hints": hints, "solution_function": self.level1, "data": zettel}
+        
+    def create_level2(self):
+        story = " Holmium Holmium Holmium and a Holmium Copper Sulfur Polonium Copper Sulfur . <br>Welcome in Americium Erbium Iodine Calcium . \
+                <br>We are in the Potassium Iodine Technetium Helium Neutron . <br>Thank you for the Scandium Hydrogen Sodium Phosphorus Sulfur Praseodymium Aluminum Iodine Neon . \
+                <br>Iodine Americium the E Arsenic Tellurium Rubidium Uranium Nitrogen Nitrogen Yttrium and Iodine Americium sitting on my Uranium Nickel Cobalt Radon and watching you . \
+                <br>On the table there are Barium Cobalt Neutron , Cobalt Oxygen Potassium Iodine Einsteinium , \
+                Fluorine Rhenium Nitrogen Carbon Hydrogen Francium Iodine Einsteinium , Barium Sodium Sodium Sulfur , \
+                <br>Carbon Holmium Cobalt Lanthanum Tellurium , Beryllium Erbium and Tungsten Iodine Neon . \
+                <br>But Iodine Americium Nobelium Neutron Aluminum Cobalt Holmium Lithium Carbon . \
+                <br>You have the Americium Boron Iodine Titanium Oxygen Nitrogen and the Polonium Tungsten Erbium to solve this riddle , \
+                because you are a good Phosphorus Lanthanum Yttrium Erbium . \
+                <br>Tungsten Oxygen Tungsten you made it this far . \
+                <br>You are very Nickel Cerium and such a Germanium Nickel Uranium Sulfur and I still want to dr Iodine Neutron Potassium with you . \
+                <br>Thorium Iodine Sulfur is your chance to get away : <br>the Phosphorus Iodine Nitrogen has three let Tellurium r Sulfur . \
+                <br>A Hydrogen Iodine Nitrogen t : It is a Phosphorus Aluminum Indium dr Oxygen me . \
+                <br>The Phosphorus Iodine Nitrogen  is  Tungsten Oxygen Tungsten \
+                <br>because it is a Phosphorus Aluminum Indium dr Oxygen me ! \
+                <br>Cobalt Nitrogen G Radium T Uranium Lanthanum Titanium Oxygen Nitrogen Sulfur ! \
+                <br>The d Oxygen Oxygen r is Oxygen Phosphorus e Nitrogen ! "
 
+        task_messages = [
+             " Du läufst aus dem Rewe heraus und verdammt, schon wieder ein verschlossener Raum. Wie gewonnen so zerronnen. " 
+            " Wann endet dieses Martyrium? Du schaust dich um und erkennst, dass du in einer Küche stehst. " 
+            " Es ist ziemlich benebelt im Raum und du erkennst am Ende der Küche einen finsteren Reiter."
+            " Der Reiter gibt dir einen Brief, den du entziffern musst. Auf dem Brief steht: <br><br><b>" + story + "<br><br>"
+            "<br>Sobald du den Brief entzifferst und das Lösungswort vorliest, öffnet sich die Tür. "
+        ]
+
+        hints = [
+            "Kommen dir bestimmte Begriffe nicht aus dem Schulunterricht bekannt vor? ", 
+            "Es klingt wie Harry Potter, aber es hat nichts mit ihm zutun ",
+            "Es gab ein Fach in der Schule, welches sich auf die oberen Elemente bezogen haben, "
+            "Richtig, der Chemie-Unterricht ",
+            "Du erkennst hier Abkürzungen für die Elemente, in englischer Sprache ",
+            "Rein zufällig existiert auf Github eine CSV-Datei, die Elements.csv heißt " ,
+            "Lies die csv-Datei ein ",
+            "Versuche die Elemente durch die Abkuerzungen zu ersetzen ",
+            "Anschließend kannst du den Text entschluesseln, sobald du die Abkuerzungen ersetzt hast",
+            "Sobald du erkennst, wie der Pin sich zusammensetzt, musst du diesen auch noch beweisen ",
+            "Dann mal los"
+
+        ]
+        return {"task_messages": task_messages, "hints": hints, "solution_function": self.level2_translate, "data": story}
     ### SOLUTIONS ###
 
-    def level1(self,zettel):
+    def level1(self, zettel):
         dictionary = {}
     
         for words in zettel:
@@ -58,16 +102,13 @@ class Rewe(EscapeRoom):
         sum = 0
         for x in sentence:
             sum = sum + dictionary[x]
-            #print(sum)
             binary = bin(sum)[2:]
-            #print(binary)
-            #print(compress(binary))
-       
-        return binary
-    
-    def level1(self,zahl):
+        
+        return self.compress(binary) 
+
+    def compress(self, zahl):
         whole_number = 0
-        first_number = 1
+        first_number = "1"
         finish_number = []
    
         for element in zahl:
@@ -78,5 +119,22 @@ class Rewe(EscapeRoom):
             first_number = element
         finish_number.append(whole_number) 
         return finish_number
+    
+    def level2_translate(self,story):
+        new_text = ""
+        liste = story.split(" ")
+        for element in liste:
+            new_text = new_text + self.zeige_abkuerzung(element) + " "
+        return new_text
 
-    #level1(songtext)    
+    def zeige_abkuerzung(self, element):
+        file = open("du.csv", "r")
+        reader = csv.DictReader(file)
+        dictionary = {}
+        for row in reader:
+            dictionary[row['Elements']] = row['Abkuerzung']
+        if element in dictionary:
+            return dictionary[element]
+        else:
+            return element
+  
