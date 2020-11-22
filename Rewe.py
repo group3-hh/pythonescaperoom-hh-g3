@@ -13,7 +13,7 @@ class Rewe_Fertig(EscapeRoom):
 
     ### LEVELS ###
 
-    def create_level1(self):
+    def create_level3(self):
         
         zettel = "Last Christmas, I gave you my heart but the very next day you gave it away . \
                 This year, to save me from tears I'll give it to someone special. Last Christmas, I gave you my heart but the very next day you gave it away. This year, to save me from tears I'll give it to someone special . \
@@ -48,7 +48,7 @@ class Rewe_Fertig(EscapeRoom):
         ]
         return {"task_messages": task_messages, "hints": hints, "solution_function": self.level1, "data": zettel}
         
-    def create_level2(self):
+    def create_level5(self):
         story = " Holmium Holmium Holmium and a Holmium Copper Sulfur Polonium Copper Sulfur . <br>Welcome in Americium Erbium Iodine Calcium . \
                 <br>We are in the Potassium Iodine Technetium Helium Neutron . <br>Thank you for the Scandium Hydrogen Sodium Phosphorus Sulfur Praseodymium Aluminum Iodine Neon . \
                 <br>Iodine Americium the E Arsenic Tellurium Rubidium Uranium Nitrogen Nitrogen Yttrium and Iodine Americium sitting on my Uranium Nickel Cobalt Radon and watching you . \
@@ -92,7 +92,7 @@ class Rewe_Fertig(EscapeRoom):
         return {"task_messages": task_messages, "hints": hints, "solution_function": self.level2_translate, "data": story}
     ### SOLUTIONS ###
 
-    def level1(self, zettel):
+    def level3(self, zettel):
         dictionary = {}
     
         for words in zettel:
@@ -120,7 +120,7 @@ class Rewe_Fertig(EscapeRoom):
         finish_number.append(whole_number) 
         return finish_number
     
-    def level2_translate(self,story):
+    def level5_translate(self,story):
         new_text = ""
         liste = story.split(" ")
         for element in liste:

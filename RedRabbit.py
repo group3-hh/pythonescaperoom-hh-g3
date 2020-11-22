@@ -4,6 +4,7 @@ import json
 import os.path
 import sqlite3
 import requests
+import csv
 from EscapeRoom import EscapeRoom
 
 if os.path.isfile('rezept.txt'):
@@ -122,60 +123,36 @@ class RedRabbit(EscapeRoom):
     def create_level3(self):
 
         zettel = "Last Christmas, I gave you my heart but the very next day you gave it away . \
-                This year, to save me from tears I'll give it to someone special. <br> Last Christmas, I gave you my heart but the very next day you gave it away. <br> This year, to save me from tears I'll give it to someone special . \
-                <br> Once bitten and twice shy I keep my distance but you still catch my eye tell me, baby do you recognize me? \
-                <br> Well, it's been a year It doesn't surprise me ( Merry Christmas ! )  \
-                <br> I wrapped it up and sent it with a note saying, I love you, I meant it now, I know what a fool I've been but if you kissed me now I know you'd fool me again \
+                This year, to save me from tears I'll give it to someone special. Last Christmas, I gave you my heart but the very next day you gave it away. This year, to save me from tears I'll give it to someone special . \
+                Once bitten and twice shy I keep my distance but you still catch my eye tell me, baby do you recognize me? \
+                Well, it's been a year It doesn't surprise me ( Merry Christmas ! )  \
+                I wrapped it up and sent it with a note saying, I love you, I meant it now, I know what a fool I've been but if you kissed me now I know you'd fool me again \
                 Last Christmas, I gave you my heart But the very next day you gave it away This year, to save me from tears I'll give it to someone special"
-        if run == 1:
 
-            task_messages = [
-                " Im Rewe angekommen wird es nicht besser. Lautstark dröhnt das Lied, welches keiner mehr hören kann, aus der Musikanlage.",
-                " Die Musik ist so laut, dass dein Kopf förmlich platzt. Und das schlimmste: der Ohrwurm ist garantiert. Daher begibst du dich ",
-                " sofort auf die Suche nach der Musikanlage, welche du hinter der Tiefkühltheke findest. Je näher du kommst, desto lauter dröhnt die Musik. ",
-                " Aufhören , schreist du die Musikanlage an, jedoch passiert nichts. Hätte ich bloß nicht so viel getrunken mit dem Langohrhasen, ",
-                " dann hätte ich auch sofort eine Idee gehabt, das Gerät auszustellen. Doch dann siehst du die Erlösung: um die Musik auszuschalten ",
-                " musst du lediglich einen Pin von 3 Zahlen eingeben. Easy denkst du. Doch wie kriegst du den Pin heraus? ",
-                " Auf einem Zettel steht:<br><br><b>" + zettel + "<br><br>"
-    
-                                                                 "<br>Gesamt: Last Christmas I gave you my heart",
-                " Binärzahl",
-                " Binärzahl komprimieren",
-                " Alles klar, dann mal los!"
-            ]
-            hints = [
-                "Zähle nach, wie oft welcher Buchstabe in dem Text, der auf dem Zettel steht, vorkommt",
-                "Der Text beginnt mit Last und endet mit special",
-                "Rechne die Anzahl der Zahlen, die sich hinter jedem einzelnen Buchstaben in diesem Satz Last Christmas I'll give you my heart zusammen",
-                "Nun berechne aus der Dezimalzahl eine Binärzahl",
-                "Dir fällt auf, dass der Pin aus 3 Zahlen besteht, die Binärzahl jedoch aus 9 Zahlen ",
-                "Komprimiere daher die Binärzahl ",
-                "Wichtig: Beginne vorne mit der 1 zu zählen ",
-                "Gib den dreistelligen Pin ein"
-            ]
-        else:
-            task_messages = [
-                "Wie gut das heute alles in der Cloud läuf. Als er letztes Jahr auf seiner Tour war fand er den Zettel mit den Zugangsdaten.",
-                "Und seit dem Tag konnte er mit seinem Spotifyaccount mit den Musikanlagen in sämtlichen Rewemärkten verknüpfen.",
-                "Und er hatte eine Playlist speziell für diesen Tag. 24/7 never ending:",
-                " Auf einem Zettel steht:<br><br><b>" + zettel + "<br><br>"
+        task_messages = [
+            " Im Rewe angekommen wird es nicht besser. Lautstark dröhnt das Lied, welches keiner mehr hören kann, aus der Musikanlage.",
+            " Die Musik ist so laut, dass dein Kopf förmlich platzt. Und das schlimmste: der Ohrwurm ist garantiert. Daher begibst du dich ",
+            " sofort auf die Suche nach der Musikanlage, welche du hinter der Tiefkühltheke findest. Je näher du kommst, desto lauter dröhnt die Musik. ",
+            " Aufhören , schreist du die Musikanlage an, jedoch passiert nichts. Hätte ich bloß nicht so viel getrunken mit dem Langohrhasen, ",
+            " dann hätte ich auch sofort eine Idee gehabt, das Gerät auszustellen. Doch dann siehst du die Erlösung: um die Musik auszuschalten ",
+            " musst du lediglich einen Pin von 3 Zahlen eingeben. Easy denkst du. Doch wie kriegst du den Pin heraus? ",
+            " Auf einem Zettel steht:<br><br><b>" + zettel + "<br><br>"
 
-                                                                 "<br>Gesamt: Last Christmas I gave you my heart",
-                " Binärzahl",
-                " Binärzahl komprimieren",
-                " Alles klar, dann mal los!"
-            ]
-            hints = [
-                "Zähle nach, wie oft welcher Buchstabe in dem Text, der auf dem Zettel steht, vorkommt",
-                "Der Text beginnt mit Last und endet mit special",
-                "Rechne die Anzahl der Zahlen, die sich hinter jedem einzelnen Buchstaben in diesem Satz Last Christmas I'll give you my heart zusammen",
-                "Nun berechne aus der Dezimalzahl eine Binärzahl",
-                "Dir fällt auf, dass der Pin aus 3 Zahlen besteht, die Binärzahl jedoch aus 9 Zahlen ",
-                "Komprimiere daher die Binärzahl ",
-                "Wichtig: Beginne vorne mit der 1 zu zählen ",
-                "Gib den dreistelligen Pin ein"
-            ]
-
+                                                             "<br>Gesamt: Last Christmas I gave you my heart",
+            " Binärzahl",
+            " Binärzahl komprimieren",
+            " Alles klar, dann mal los!"
+        ]
+        hints = [
+            "Zähle nach, wie oft welcher Buchstabe in dem Text, der auf dem Zettel steht, vorkommt",
+            "Der Text beginnt mit Last und endet mit special",
+            "Rechne die Anzahl der Zahlen, die sich hinter jedem einzelnen Buchstaben in diesem Satz Last Christmas I'll give you my heart zusammen",
+            "Nun berechne aus der Dezimalzahl eine Binärzahl",
+            "Dir fällt auf, dass der Pin aus 3 Zahlen besteht, die Binärzahl jedoch aus 9 Zahlen ",
+            "Komprimiere daher die Binärzahl ",
+            "Wichtig: Beginne vorne mit der 1 zu zählen ",
+            "Gib den dreistelligen Pin ein"
+        ]
         return {"task_messages": task_messages, "hints": hints, "solution_function": self.level3, "data": zettel}
 
     def create_level4(self):
@@ -223,48 +200,47 @@ class RedRabbit(EscapeRoom):
         return {"task_messages": task_messages, "hints": hints, "solution_function": self.level4_check_identity_card_validity, "data": json_choice}
 
     def create_level5(self):
-        if run == 1:
-            json_choice = random.choice(["{\"identitycard\":[{\"idnumber\":\"L2200AVWO2\",\"birthdate\":\"9504095\",\"expirydate\":\"2210012D\",\"totalchecknumber\":\"2\"}]}",
-                                        "{\"identitycard\":[{\"idnumber\":\"N4OBZNGAA4\",\"birthdate\":\"8601012\",\"expirydate\":\"2809078D\",\"totalchecknumber\":\"4\"}]}"])
-            task_messages = [
-                "Der Pin lautet 0 3 5 1. Das war einfach. Endlich ist die Musikanlage still. Du hörst ein Aufschrei hinter dir: \"Hey, was machen Sie denn da? Das ist kein Spielzeug.\"",
-                "Das sind die Worte, die dich aufhorchen lassen, damit du schleunigst das Weite suchst. Jetzt schnell die Schnapspraline holen und ab an die Kasse damit.",
-                "Gleich geschafft, denkst du dir. Doch Moment.<br><br>",
-                "Die Dame an der Kasse scannt die Schnapspraline, es ertönt ein „piep“, sie schaut die Schnapspraline an und sagt: \"Junger Herr, ehm, so wie ich das seh ist da Alkohol drin.",
-                "Alkohol darf ich Ihnen nur verkaufen, wenn Sie mir beweisen, dass Sie bereits das 18. Lebensjahr vollendet haben. Ansonsten bleibt diese Schnapspraline hier bei mir!\"<br><br>",
-                "Lächerlich denkst du dir, die macht es dir aber schwer. Vermutlich will die alte Dame nur an meinen Namen und meine Adresse heran, aber was soll’s.",
-                "Du greifst nach deinem Personalausweis und reichst ihr diesen. Ihre Brillengläser sind dick wie ein Aschenbecher. Sie verzieht die Nase und schaut sich",
-                "die maschinenlesbare Zone <b>"+json_choice+"</b> des",
-                "Personalausweises ganz genau an.<br><br>",
-                "\"Junger Herr, ich kann zwar sehen, dass Sie das 18. Lebensjahr vollendet haben. Jedoch ist der Personalausweis ganz klar eine Fälschung. Ziemlich frech von Ihnen.\" \"Unmöglich\",",
-                "erklärst du ihr \"mein Personalausweis ist keine Fälschung.\" Die kecke Dame ergänzt: \"Dann beweisen Sie mir, dass dieser echt ist. Wenn Sie dies zeigen, dann bekommen Sie Ihre",
-                "Schnapspraline und können den Laden verlassen.\"<br><br>",
-                "Dann beweise es der Dame, das es sich bei der maschinenlesbaren Zone um gültige Feldinhalte handelt!"
-            ]
-            hints = [
-                "Bei dem Element \"idnumber\" handelt es sich um die Ausweisnummer plus eine Prüfziffer, \
-                bei dem Element \"birthdate\" um das Geburtsdatum im Format JJMMTT plus eine Prüfziffer, \
-                bei dem Element \"expirydate\" um das Ablaufdatum des Ausweises im Format JJMMTT plus eine Prüfziffer gefolgt von einem Länderkennzeichen und \
-                bei dem Element \"totalchecknumber\" um eine Prüfziffer über die zuvor genannten drei Elemente (außer dem Länderkennzeichen)!",
-                "Für alle Daten wird der gleiche Algorithmus verwendet. Jede Ziffer wird links beginnend, alternierend mit 7, 3, 1 multipliziert und addiert, \
-                und dann Modulo 10 genommen. Für die Gesamtprüfziffer werden alle drei Daten (inklusive der Prüfziffer, aber ohne Länderkennzeichen) \
-                aneinandergehängt und ebenfalls der Algorithmus angewandt.",
-                "Buchstaben müssen umgewandelt werden! A = 10, B = 11, ..."
-            ]
-        else:
-            json_choice = random.choice(["{\"identitycard\":[{\"idnumber\":\"L9VXUWTCA7\",\"birthdate\":\"7611072\",\"expirydate\":\"2408035D\",\"totalchecknumber\":\"2\"}]}",
-                                        "{\"identitycard\":[{\"idnumber\":\"T6VXYQYZU5\",\"birthdate\":\"9107038\",\"expirydate\":\"2104212D\",\"totalchecknumber\":\"9\"}]}"])
-            task_messages = [
-                "Bester Tag ever. Er konnte sich den verkaterten Zottel bildlich vorstellen. Frau Speckmann hatte er gebrieft,<br>",
-                "sie würde ihn ein wenig aufhalten, während er prüft ob seine Playlist noch läuft.<br>",
-                "Bei Frau Speckmann kaufte er häufig für sein Leibgericht ein, falscher Hase. Sie hatten sich ein paar mal auf<br>",
-                "einen Kaffee getroffen und dabei hatte Sie ihm gezeigt wie man schlecht gefälschte Ausweise in der maschinenlesbaren Zone erkennt.<br><br>",
-                "Wie ging dass doch gleich bei nachfolgendem Ausweis?<br><br><b>"+json_choice+"</b>"
-            ]
-            hints = [
-                "Der Algorithmus sowie die Bedeutung der Feldinhalte der maschinenlesbaren Zone sollten dir noch aus dem vorherigen Durchlauf des Escape Rooms bekannt sein :)",
-            ]
-        return {"task_messages": task_messages, "hints": hints, "solution_function": self.level4_check_identity_card_validity, "data": json_choice}
+        story = " Holmium Holmium Holmium and a Holmium Copper Sulfur Polonium Copper Sulfur . <br>Welcome in Americium Erbium Iodine Calcium . \
+                <br>We are in the Potassium Iodine Technetium Helium Neutron . <br>Thank you for the Scandium Hydrogen Sodium Phosphorus Sulfur Praseodymium Aluminum Iodine Neon . \
+                <br>Iodine Americium the E Arsenic Tellurium Rubidium Uranium Nitrogen Nitrogen Yttrium and Iodine Americium sitting on my Uranium Nickel Cobalt Radon and watching you . \
+                <br>On the table there are Barium Cobalt Neutron , Cobalt Oxygen Potassium Iodine Einsteinium , \
+                Fluorine Rhenium Nitrogen Carbon Hydrogen Francium Iodine Einsteinium , Barium Sodium Sodium Sulfur , \
+                <br>Carbon Holmium Cobalt Lanthanum Tellurium , Beryllium Erbium and Tungsten Iodine Neon . \
+                <br>But Iodine Americium Nobelium Neutron Aluminum Cobalt Holmium Lithium Carbon . \
+                <br>You have the Americium Boron Iodine Titanium Oxygen Nitrogen and the Polonium Tungsten Erbium to solve this riddle , \
+                because you are a good Phosphorus Lanthanum Yttrium Erbium . \
+                <br>Tungsten Oxygen Tungsten you made it this far . \
+                <br>You are very Nickel Cerium and such a Germanium Nickel Uranium Sulfur and I still want to dr Iodine Neutron Potassium with you . \
+                <br>Thorium Iodine Sulfur is your chance to get away : <br>the Phosphorus Iodine Nitrogen has three let Tellurium r Sulfur . \
+                <br>A Hydrogen Iodine Nitrogen t : It is a Phosphorus Aluminum Indium dr Oxygen me . \
+                <br>The Phosphorus Iodine Nitrogen  is  Tungsten Oxygen Tungsten \
+                <br>because it is a Phosphorus Aluminum Indium dr Oxygen me ! \
+                <br>Cobalt Nitrogen G Radium T Uranium Lanthanum Titanium Oxygen Nitrogen Sulfur ! \
+                <br>The d Oxygen Oxygen r is Oxygen Phosphorus e Nitrogen ! "
+
+        task_messages = [
+             " Du läufst aus dem Rewe heraus und verdammt, schon wieder ein verschlossener Raum. Wie gewonnen so zerronnen. " 
+            " Wann endet dieses Martyrium? Du schaust dich um und erkennst, dass du in einer Küche stehst. " 
+            " Es ist ziemlich benebelt im Raum und du erkennst am Ende der Küche einen finsteren Reiter."
+            " Der Reiter gibt dir einen Brief, den du entziffern musst. Auf dem Brief steht: <br><br><b>" + story + "<br><br>"
+            "<br>Sobald du den Brief entzifferst und das Lösungswort vorliest, öffnet sich die Tür. "
+        ]
+
+        hints = [
+            "Kommen dir bestimmte Begriffe nicht aus dem Schulunterricht bekannt vor? ",
+            "Es klingt wie Harry Potter, aber es hat nichts mit ihm zutun ",
+            "Es gab ein Fach in der Schule, welches sich auf die oberen Elemente bezogen haben, "
+            "Richtig, der Chemie-Unterricht ",
+            "Du erkennst hier Abkürzungen für die Elemente, in englischer Sprache ",
+            "Rein zufällig existiert auf Github eine CSV-Datei, die Elements.csv heißt " ,
+            "Lies die csv-Datei ein ",
+            "Versuche die Elemente durch die Abkuerzungen zu ersetzen ",
+            "Anschließend kannst du den Text entschluesseln, sobald du die Abkuerzungen ersetzt hast",
+            "Sobald du erkennst, wie der Pin sich zusammensetzt, musst du diesen auch noch beweisen ",
+            "Dann mal los"
+
+        ]
+        return {"task_messages": task_messages, "hints": hints, "solution_function": self.level5_translate, "data": story}
 
     def create_level6(self):
         if run == 1:
@@ -411,16 +387,13 @@ class RedRabbit(EscapeRoom):
         sum = 0
         for x in sentence:
             sum = sum + dictionary[x]
-            # print(sum)
             binary = bin(sum)[2:]
-            # print(binary)
-            # print(compress(binary))
 
-        return binary
+        return self.compress(binary)
 
-    def level3(self, zahl):
+    def compress(self, zahl):
         whole_number = 0
-        first_number = 1
+        first_number = "1"
         finish_number = []
 
         for element in zahl:
@@ -479,6 +452,24 @@ class RedRabbit(EscapeRoom):
 
         except:
             return "Error calculating checksum!"
+
+    def level5_translate(self,story):
+        new_text = ""
+        liste = story.split(" ")
+        for element in liste:
+            new_text = new_text + self.zeige_abkuerzung(element) + " "
+        return new_text
+
+    def zeige_abkuerzung(self, element):
+        file = open("du.csv", "r")
+        reader = csv.DictReader(file)
+        dictionary = {}
+        for row in reader:
+            dictionary[row['Elements']] = row['Abkuerzung']
+        if element in dictionary:
+            return dictionary[element]
+        else:
+            return element
 
     def level6_crack_authorization(self, name_choice):
         if self.level6_load_database_from_web(
