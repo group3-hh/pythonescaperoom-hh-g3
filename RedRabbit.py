@@ -62,7 +62,7 @@ class RedRabbit(EscapeRoom):
                 "\"Hui, der is ja komplett weggetreten muahahah... Morgen muss er Arbeiten... Ich mal ihm was ins Gesicht\"",
                 "\"Nein warte... das wäre kindisch.... Ich rasier ihm den Bart ab.... Nein warte ... das hatten wir schon und er wäre fast gefeuert worden",
                 "\"Ok erstmal seine Handy Pin ändern\"",
-                "Er wusste, dass sein Kompanion Rätsel hasste, warum sonst waren alle Sudoku im Bad unangetastet?",
+                "Er wusste, dass sein Kompagnon Rätsel hasste, warum sonst waren alle Sudoku im Bad unangetastet?",
                 "Also würden er ein paar Rätsel testen, aber vorher noch nen lütten",
                 "Merke dir folgende Zahlen:",
                 f"<b> {numbers} </b ",
