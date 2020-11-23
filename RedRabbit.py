@@ -336,8 +336,8 @@ class RedRabbit(EscapeRoom):
 
     def create_level6(self):
         if run == 1:
-            name_choice = random.choice(["Susanne",
-                                        "Susanne"])
+            name_choice = "Susanne"
+
             task_messages = [
                 "WOW, eine tolle Arbeit. Endlich bist du am Ziel, als du die Küche verlässt. Du entdeckst deinen roten Mantel und dein Vorgesetzter Santa Claus steht vor dir.",
                 "Er verlangt die Schnapspraline, die du dem Langohrhasen noch schnell entwenden konntest, als du die Küche verlassen hast. \"Danke!\", sagt Santa Claus und fügt hinzu: ",
@@ -354,7 +354,7 @@ class RedRabbit(EscapeRoom):
                 "Du erkennst, dass du die Authentifizierungsmöglichkeiten dem System auch als JSON-Objekt übergeben kannst. Du weißt, dass eine <b>" + name_choice+ "</b> die Berechtigung hat, diese Tür zu öffnen.",
                 "Letztendlich hat sie dir auch einmal erklärt, dass das Zutrittssystem Sicherheitslücken aufweist.<br><br>",
                 "Dir gelingt es, die SQLight-Datenbank zu kopieren, die dir unter <b> https://pythonescaperoom.soeren-steinberg.de/alert.db </b> zur Verfügung steht.",
-                "Du versuchst dich als Susanne auszugeben, um damit die Tür zu öffnen.<br><br>",
+                "Du versuchst dich als <b>" + name_choice+ "</b> auszugeben, um damit die Tür zu öffnen.<br><br>",
                 "Gelingt es dir?"
             ]
             hints = [
@@ -574,15 +574,13 @@ class RedRabbit(EscapeRoom):
             return element
 
     def level6_crack_authorization(self, name_choice):
-        if self.level6_load_database_from_web(
-                "https://pythonescaperoom.soeren-steinberg.de/alert.db") == True and os.path.exists(
-                "alert.db") and os.access("alert.db", os.R_OK):
+        if self.level6_load_database_from_web("https://pythonescaperoom.soeren-steinberg.de/alert.db") == True and os.path.exists("alert.db") and os.access("alert.db", os.R_OK):
 
             db = sqlite3.connect("alert.db")
             cursor = db.cursor()
-            cursor.execute(
-                "SELECT firstname, lastname, securitycard_number, pin, active, date_of_expiry FROM securitycard_owner INNER JOIN securitycard on securitycard.sc_id = securitycard_owner.sc_id WHERE firstname = ? and active = 1 and date_of_expiry >= datetime('now')",
-                (name_choice,))
+            cursor.execute("SELECT firstname, lastname, securitycard_number, pin, active, date_of_expiry \
+                            FROM securitycard_owner INNER JOIN securitycard on securitycard.sc_id = securitycard_owner.sc_id \
+                            WHERE firstname = ? and active = 1 and date_of_expiry >= datetime('now')",(name_choice,))
             resultset = cursor.fetchall()
             db.close()
 
