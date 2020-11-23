@@ -204,7 +204,7 @@ class RedRabbit(EscapeRoom):
             json_choice = random.choice(["{\"identitycard\":[{\"idnumber\":\"L2200AVWO2\",\"birthdate\":\"9504095\",\"expirydate\":\"2210012D\",\"totalchecknumber\":\"2\"}]}",
                                         "{\"identitycard\":[{\"idnumber\":\"N4OBZNGAA4\",\"birthdate\":\"8601012\",\"expirydate\":\"2809078D\",\"totalchecknumber\":\"4\"}]}"])
             task_messages = [
-                "Der Pin lautet 0 3 5 1. Das war einfach. Endlich ist die Musikanlage still. Du hörst ein Aufschrei hinter dir: \"Hey, was machen Sie denn da? Das ist kein Spielzeug.\"",
+                "Der Pin lautet 3 5 1. Das war einfach. Endlich ist die Musikanlage still. Du hörst ein Aufschrei hinter dir: \"Hey, was machen Sie denn da? Das ist kein Spielzeug.\"",
                 "Das sind die Worte, die dich aufhorchen lassen, damit du schleunigst das Weite suchst. Jetzt schnell die Schnapspraline holen und ab an die Kasse damit.",
                 "Gleich geschafft, denkst du dir. Doch Moment.<br><br>",
                 "Die Dame an der Kasse scannt die Schnapspraline, es ertönt ein „piep“, sie schaut die Schnapspraline an und sagt: \"Junger Herr, ehm, so wie ich das seh ist da Alkohol drin.",
@@ -216,7 +216,8 @@ class RedRabbit(EscapeRoom):
                 "\"Junger Herr, ich kann zwar sehen, dass Sie das 18. Lebensjahr vollendet haben. Jedoch ist der Personalausweis ganz klar eine Fälschung. Ziemlich frech von Ihnen.\" \"Unmöglich\",",
                 "erklärst du ihr \"mein Personalausweis ist keine Fälschung.\" Die kecke Dame ergänzt: \"Dann beweisen Sie mir, dass dieser echt ist. Wenn Sie dies zeigen, dann bekommen Sie Ihre",
                 "Schnapspraline und können den Laden verlassen.\"<br><br>",
-                "Dann beweise es der Dame, das es sich bei der maschinenlesbaren Zone um gültige Feldinhalte handelt!"
+                "Dann beweise es der Dame, das es sich bei der maschinenlesbaren Zone um gültige Feldinhalte handelt!<br><br>",
+                "<b>Schreibe hierzu eine Methode run(\"json_choice\"), die als Ergebnis deiner Prüfung Wahr oder Falsch zurückgibt!</b>"
             ]
             hints = [
                 "Bei dem Element \"idnumber\" handelt es sich um die Ausweisnummer plus eine Prüfziffer, \
@@ -236,7 +237,8 @@ class RedRabbit(EscapeRoom):
                 "sie würde ihn ein wenig aufhalten, während er prüft ob seine Playlist noch läuft.<br>",
                 "Bei Frau Speckmann kaufte er häufig für sein Leibgericht ein, falscher Hase. Sie hatten sich ein paar mal auf<br>",
                 "einen Kaffee getroffen und dabei hatte Sie ihm gezeigt wie man schlecht gefälschte Ausweise in der maschinenlesbaren Zone erkennt.<br><br>",
-                "Wie ging dass doch gleich bei nachfolgendem Ausweis?<br><br><b>"+json_choice+"</b>"
+                "Wie ging dass doch gleich bei nachfolgendem Ausweis?<br><br><b>"+json_choice+"</b><br><br>",
+                "<b>Schreibe eine Methode run(\"json_choice\"), die als Ergebnis deiner Prüfung Wahr oder Falsch zurückgibt!</b>"
             ]
             hints = [
                 "Der Algorithmus sowie die Bedeutung der Feldinhalte der maschinenlesbaren Zone sollten dir noch aus dem vorherigen Durchlauf des Escape Rooms bekannt sein :)",
@@ -355,11 +357,12 @@ class RedRabbit(EscapeRoom):
                 "Letztendlich hat sie dir auch einmal erklärt, dass das Zutrittssystem Sicherheitslücken aufweist.<br><br>",
                 "Dir gelingt es, die SQLight-Datenbank zu kopieren, die dir unter <b> https://pythonescaperoom.soeren-steinberg.de/alert.db </b> zur Verfügung steht.",
                 "Du versuchst dich als <b>" + name_choice+ "</b> auszugeben, um damit die Tür zu öffnen.<br><br>",
-                "Gelingt es dir?"
+                "Gelingt es dir?<br><br>",
+                "<b>Schreibe hierzu eine Methode run(\"name_choice\"), die als Ergebnis ein JSON-Objekt mit den Eigenschaftsnamen firstname, lastname, securitycard_number und pin zurückgibt!</b>"
             ]
             hints = [
                 "Die SQLight Datenbank hat zwei Tabellen mit den Namen securitycard_owner und securitycard",
-                "Die Schnittstelle des Zutrittsystems erwartet ein JSON-Objekt mit den Eigenschaftsnamen firstname, lastname, securitycard_number und pin!"
+                "???"
             ]
         else:
             name_choice = "Susanne"
@@ -371,12 +374,12 @@ class RedRabbit(EscapeRoom):
                 "Im letzten Jahr hatte ich zusammen mit dem Winterarbeiter diesen Programmierkurs gemacht. Und was trainiert besser als das Wissen in der Praxis anzuwenden.<br>",
                 "War ja nicht seine Schuld dass die Lagerhalle nebenan die Zugangsdaten offen im Internet unter <b>https://pythonescaperoom.soeren-steinberg.de/alert.db </b><br>",
                 "stehen ließ. Mal schauen wer ihm heute den Zutritt gewährte. Anschließend musste er zwingend telefonieren und die Wogen glätten. Kartoffelsalat und Würstchen<br>",
-                "waren quasi schon vorbereitet."
+                "waren quasi schon vorbereitet.<br><br>",
+                "Schreibe eine Methode run(\"name_choice\"), die als Ergebnis ein JSON-Objekt mit den Eigenschaftsnamen firstname, lastname, securitycard_number und pin zurückgibt!"
             ]
             hints = [
                 "Könnte es die "+name_choice+" sein, die Zugang zur Lagerhalle hat?",
-                "Denk daran, der Schnittstelle des Zutrittssystems die Daten wieder als JSON-Objekt mit den Eigenschaftsnamen "
-                "firstname, lastname, securitycard_number und pin zu übergeben"
+                "???"
             ]
         return {"task_messages": task_messages, "hints": hints, "solution_function": self.level6_crack_authorization, "data": name_choice}
 
