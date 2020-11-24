@@ -387,13 +387,13 @@ class RedRabbit(EscapeRoom):
 
             task_messages = [
                 "Du hast es geschafft und damit du weißt, was den Nikolaus so umgehauen hat und du für Weihnachten eventuell ein Geschenk hast. Hier deine Belohnung !! ",
-                "Danach ist auch wirklich Schluss! Wirklisch. Die Zutatenliste enthält durch einen dummen Zufall die Zutaten und Mengenangabe und auch noch in der falschen Reihenfolge",
+                "Danach ist auch wirklich Schluss! Wirklich. Die Zutatenliste enthält durch einen dummen Zufall die Zutaten und Mengenangabe und auch noch in der falschen Reihenfolge",
                 "Entferne und merke dir jedes 3 dritte Zutat aus der Liste, bis sie leer wird.",
-                "Mach das selbe mit der Mengenangabe allerdings nimm hier jede 5 aus der Liste, bis sie leer wird.",
-                "Füge das ganze zu einem Wörterbuch mit der Zutat und der Mengenangabe zusammen und schicke es mir ;).",
+                "Mach dasselbe mit der Mengenangabe allerdings nimm hier jede 5 aus der Liste, bis sie leer wird.",
+                "Füge das Ganze zu einem Wörterbuch mit der Zutat und der Mengenangabe zusammen und schicke es mir ;).",
                 f"<b> {meng} </b ",
-                "Und ja.... das ist nur die Zutatenliste.... Spiele noch mal und die Ganze geschichte zu erfahren und das Rezept zu vervollständigen.",
-                "Restarte den Webserver und betrette den Raum noch mal",
+                "Und ja.... das ist nur die Zutatenliste.... Spiele noch mal und die ganze Geschichte zu erfahren und das Rezept zu vervollständigen.",
+                "Restarte den Webserver und betrete den Raum noch mal",
             ]
 
 
