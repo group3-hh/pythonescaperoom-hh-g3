@@ -389,14 +389,15 @@ class RedRabbit(EscapeRoom):
         if run == 1:
 
             task_messages = [
-                "Du hast es geschafft und damit du weißt, was den Nikolaus so umgehauen hat und du für Weihnachten eventuell ein Geschenk hast. Hier deine Belohnung !! ",
-                "Danach ist auch wirklich Schluss! Wirklich. Die Zutatenliste enthält durch einen dummen Zufall die Zutaten und Mengenangabe und auch noch in der falschen Reihenfolge",
-                "Entferne und merke dir jedes 3 dritte Zutat aus der Liste, bis sie leer wird.",
-                "Mach dasselbe mit der Mengenangabe allerdings nimm hier jede 5 aus der Liste, bis sie leer wird.",
+                "Du hast es geschafft, aber wenn du erfahren willst was genau den Nikolaus so umgehauen hat, wirst du auch dieses Level meistern müssen !! ",
+                "Hier ist der erste Teil einer kleinen Belohnung, die dich Erwartet.",
+                "Die Zutatenliste enthält durch einen dummen Zufall die Zutaten und Mengenangabe in der falschen Reihenfolge",
+                "Entferne und merke dir jede 3 dritte Zutat aus der Liste, bis sie leer ist.",
+                "Mach dasselbe mit der Mengenangabe allerdings nimm hier jede 5 Element aus der Liste, bis sie leer ist.",
                 "Füge das Ganze zu einem Wörterbuch mit der Zutat und der Mengenangabe zusammen und schicke es mir ;).",
                 f"<b> {meng} </b ",
-                "Und ja.... das ist nur die Zutatenliste.... Spiele noch mal und die ganze Geschichte zu erfahren und das Rezept zu vervollständigen.",
-                "Restarte den Webserver und betrete den Raum noch mal",
+                "Und ja.... das ist nur die Zutatenliste.... Spiele noch mal um die ganze Geschichte zu erfahren und das Rezept zu vervollständigen.",
+                "Restarte den Webserver und betrete den Raum erneut.",
             ]
 
 
@@ -412,8 +413,8 @@ class RedRabbit(EscapeRoom):
 
             task_messages = [
                 "Nun ist es geschafft",
-                "Du findest nach dem Beantworten der folgenden Frage das Rezept des legendären Eierlikörs in der Datei rezept.txt",
-                "im Startordner. Viel Spaß beim nachmachen",
+                "Du findest nach dem Beantworten der folgenden Frage das Rezept des legendären Eierlikörs in der Datei rezept.txt im Startordner.",
+                "Viel Spaß beim nachmachen",
                 "Final Question: Sollte dieser Escaperoom die volle Punktzahl erhalten ? (Ja/Nein)",
                 "es gibt nur eine richtige Antwort !"
             ]
