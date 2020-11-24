@@ -1,7 +1,7 @@
 import random
 import string
 import json
-import os.path
+import os
 import sqlite3
 import requests
 import csv
