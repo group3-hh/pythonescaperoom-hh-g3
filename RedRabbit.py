@@ -431,49 +431,39 @@ class RedRabbit(EscapeRoom):
     def level1(self, numbers):
         counter = 0
         numbers.sort(reverse=True)
-        gerade = [x for x in numbers if x % 2 == 0]
-        a = gerade[counter]
+        numbers = [x for x in numbers if x % 2 == 0]
+        a = numbers[counter]
         b = str(a)[::-1]
 
-        while a > 998 or a < 100 or a < int(b) or a == int(b):
+        while a > 998 or a < 100 or a <= int(b):
             counter += 1
-            a = gerade[counter]
+            a = numbers[counter]
             b = str(a)[::-1]
 
         sum = a - int(b)
         if int(sum) <= 99:
             sum = int(sum) * 10
-        d = str(sum)[::-1]
-        erg = sum + int(d)
+        b = str(sum)[::-1]
+        erg = sum + int(b)
         return erg
 
     def level2(self, liste):
-        pot = 2
-        count = 0
-        erg = ""
+        magische_zahl_1 = potenz = 2
 
-        length = len(liste)
-        while (len(str(1089 ** pot))) != length:
-            pot += 1
-        a = 1089 ** pot
+        loesung = []
+        while len(str(magische_zahl_1)) < len(liste):
+            magische_zahl_1 = 1089 ** potenz
+            potenz += 1
 
-        temp_list = [int(x) for x in str(a)]
-        temp_length = len(temp_list)
-
-        for i in range(length):
-            for j in liste[i]:
-                if count == temp_list[0]:
-                    erg = erg + str(j)
-                    count = 0
-                    del temp_list[0]
-                    break
-                else:
-                    count += 1
+        for i in range(len(liste)):
+            x = str(magische_zahl_1)[i]
+            loesung.append(liste[i][int(x)])
+        loesung = ("".join(loesung))
         if run == 1:
-            erg = bytes.fromhex(erg).decode('utf-8')[::-1]
+            loesung = bytes.fromhex(loesung).decode('utf-8')[::-1]
         else:
-            erg = bytes.fromhex(erg).decode('utf-8')
-        return erg
+            loesung = bytes.fromhex(loesung).decode('utf-8')
+        return loesung
 
     def level3(self, zettel):
         dictionary = {}
