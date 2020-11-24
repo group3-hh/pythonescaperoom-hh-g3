@@ -7,8 +7,7 @@ def run(liste):
         potenz += 1
 
     for i in range(len(liste)):
-        x = str(magische_zahl_1)[i]
-        loesung.append(liste[i][int(x)])
+        loesung.append(liste[i][int(str(magische_zahl_1)[i])])
     loesung = ("".join(loesung))
     loesung = bytes.fromhex(loesung).decode('utf-8')
     return loesung

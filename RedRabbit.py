@@ -449,16 +449,16 @@ class RedRabbit(EscapeRoom):
 
     def level2(self, liste):
         magische_zahl_1 = potenz = 2
-
         loesung = []
+
         while len(str(magische_zahl_1)) < len(liste):
             magische_zahl_1 = 1089 ** potenz
             potenz += 1
 
         for i in range(len(liste)):
-            x = str(magische_zahl_1)[i]
-            loesung.append(liste[i][int(x)])
+            loesung.append(liste[i][int(str(magische_zahl_1)[i])])
         loesung = ("".join(loesung))
+
         if run == 1:
             loesung = bytes.fromhex(loesung).decode('utf-8')[::-1]
         else:
