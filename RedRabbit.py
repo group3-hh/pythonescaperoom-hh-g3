@@ -358,11 +358,12 @@ class RedRabbit(EscapeRoom):
                 "Dir gelingt es, die SQLight-Datenbank zu kopieren, die dir unter <b> https://pythonescaperoom.soeren-steinberg.de/alert.db </b> zur Verfügung steht.",
                 "Du versuchst dich als <b>" + name_choice+ "</b> auszugeben, um damit die Tür zu öffnen.<br><br>",
                 "Gelingt es dir?<br><br>",
-                "<b>Schreibe hierzu eine Methode run(\"name_choice\"), die als Ergebnis ein JSON-Objekt mit den Eigenschaftsnamen firstname, lastname, securitycard_number und pin zurückgibt!</b>"
+                "<b>Schreibe hierzu eine Methode run(\"name_choice\"), die als Ergebnis ein JSON-Objekt mit den Eigenschaftsnamen firstname, lastname, securitycard_number und pin zurückgibt!</b><br>",
+                "Das Zutrittssystem erfordert die Werte der Eigenschaftsnamen im Base64 Format!"
             ]
             hints = [
                 "Die SQLight Datenbank hat zwei Tabellen mit den Namen securitycard_owner und securitycard",
-                "???"
+                "Du kannst die SQLight Datenbank auch mit dem Tool SQLiteDatabaseBrowser öffnen, um dich mit der Datenbank vertraut zu machen."
             ]
         else:
             name_choice = "Susanne"
@@ -375,11 +376,12 @@ class RedRabbit(EscapeRoom):
                 "War ja nicht seine Schuld dass die Lagerhalle nebenan die Zugangsdaten offen im Internet unter <b>https://pythonescaperoom.soeren-steinberg.de/alert.db </b><br>",
                 "stehen ließ. Mal schauen wer ihm heute den Zutritt gewährte. Anschließend musste er zwingend telefonieren und die Wogen glätten. Kartoffelsalat und Würstchen<br>",
                 "waren quasi schon vorbereitet.<br><br>",
-                "Schreibe eine Methode run(\"name_choice\"), die als Ergebnis ein JSON-Objekt mit den Eigenschaftsnamen firstname, lastname, securitycard_number und pin zurückgibt!"
+                "<b>Schreibe eine Methode run(\"name_choice\"), die als Ergebnis ein JSON-Objekt mit den Eigenschaftsnamen firstname, lastname, securitycard_number und pin zurückgibt!</b><br>",
+                "Das Zutrittssystem erfordert die Werte der Eigenschaftsnamen im Base64 Format!"
             ]
             hints = [
                 "Könnte es die "+name_choice+" sein, die Zugang zur Lagerhalle hat?",
-                "???"
+                "Sagt dir das Tool SQLiteDatabaseBrowser etwas?"
             ]
         return {"task_messages": task_messages, "hints": hints, "solution_function": self.level6_crack_authorization, "data": name_choice}
 
@@ -592,14 +594,19 @@ class RedRabbit(EscapeRoom):
                 json_list = []
                 for result in resultset:
                     json_dic = {}
-                    json_dic['firstname'] = result[0]
-                    json_dic['lastname'] = result[1]
-                    json_dic['securitycard_number'] = result[2]
-                    json_dic['pin'] = result[3]
+                    json_dic['firstname'] = self.level6_encode_to_base64_cypher(str(result[0]))
+                    json_dic['lastname'] = self.level6_encode_to_base64_cypher(str(result[1]))
+                    json_dic['securitycard_number'] = self.level6_encode_to_base64_cypher(str(result[2]))
+                    json_dic['pin'] = self.level6_encode_to_base64_cypher(str(result[3]))
                     json_list.append(json_dic)
                 return json.dumps(json_list[0])
         else:
             print("Error - Failed to open database!")
+    
+    def level6_encode_to_base64_cypher(self, cypher):
+        cypher_bytes = cypher.encode('ascii')
+        base64_bytes = base64.b64encode(cypher_bytes)
+        return base64_bytes.decode('ascii')
 
     def level6_load_database_from_web(self, url):
         try:

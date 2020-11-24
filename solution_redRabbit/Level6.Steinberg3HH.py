@@ -2,6 +2,7 @@ import requests
 import os
 import sqlite3
 import json
+import base64
 
 def run(name_choice):
     if load_database_from_web("https://pythonescaperoom.soeren-steinberg.de/alert.db") == True and os.path.exists("alert.db") and os.access("alert.db", os.R_OK):
@@ -18,14 +19,19 @@ def run(name_choice):
             json_list = []
             for result in resultset:
                 json_dic = {}
-                json_dic['firstname'] = result[0]
-                json_dic['lastname'] = result[1]
-                json_dic['securitycard_number'] = result[2]
-                json_dic['pin'] = result[3]
+                json_dic['firstname'] = encode_to_base64_cypher(str(result[0]))
+                json_dic['lastname'] = encode_to_base64_cypher(str(result[1]))
+                json_dic['securitycard_number'] = encode_to_base64_cypher(str(result[2]))
+                json_dic['pin'] = encode_to_base64_cypher(str(result[3]))
                 json_list.append(json_dic)
             return json.dumps(json_list[0])
     else:
         print("Error - Failed to open database!")
+
+def encode_to_base64_cypher(cypher):
+    cypher_bytes = cypher.encode('ascii')
+    base64_bytes = base64.b64encode(cypher_bytes)
+    return base64_bytes.decode('ascii')
     
 def load_database_from_web(url):
     try:
