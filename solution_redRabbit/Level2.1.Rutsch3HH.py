@@ -1,8 +1,8 @@
 def run(liste):
     magische_zahl_1 = potenz = 2
-
     loesung = []
-    while len(str(magische_zahl_1)) < len(liste):
+
+    while len(str(magische_zahl_1)) == len(liste):
         magische_zahl_1 = 1089 ** potenz
         potenz += 1
 

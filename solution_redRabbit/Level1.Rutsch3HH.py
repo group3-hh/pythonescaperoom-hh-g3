@@ -10,10 +10,10 @@ def run(numbers):
         a = numbers[counter]
         b = str(a)[::-1]
 
-    sum = a - int(b)
-    if int(sum) <= 99:
-        sum = int(sum) * 10
-    b = str(sum)[::-1]
-    erg = sum + int(b)
+    diff = a - int(b)
+    if int(diff) <= 99:
+        diff = int(diff) * 10
+    b = str(diff)[::-1]
+    erg = diff + int(b)
     return erg
 

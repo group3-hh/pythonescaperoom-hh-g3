@@ -1,6 +1,4 @@
-meng =  ["achtSEPERATOREigelb","250 gSEPERATORPuderzucker","375 mlSEPERATORKondensmilch","8 gSEPERATORVanillezucker","250 mlSEPERATORRum"]
-
-def run(meng): 
+def run(meng):
      
     list1 = [i.split('SEPERATOR')[0] for i in meng]
     list2 = [i.split('SEPERATOR')[1] for i in meng]
@@ -15,15 +13,10 @@ def run(meng):
         for i in range(len_list):
         
             while len_list > 0:  
-                index = (pos + index) % len_list 
-        #print(index)
-          
-        # removes and prints the required 
-        # element 
+                index = (pos + index) % len_list
                 temp1.append(nliste[index])
                 nliste.pop(index)
-                len_list =  (len(nliste))
-                #print(temp1)
+                len_list = (len(nliste))
         return temp1
     
     menge = create_liste(list1,3)
