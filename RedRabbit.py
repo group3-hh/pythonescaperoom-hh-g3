@@ -8,8 +8,6 @@ import csv
 import base64
 from EscapeRoom import EscapeRoom
 
-# Test von Konsu
-
 #csv = 'RWxlbWVudHMsQWJrdWVyenVuZw0KTmV1dHJvbixuDQpIeWRyb2dlbixIDQpIZWxpdW0sSGUNCkxpdGhpdW0sTGkNCkJlcnlsbGl1bSxCZQ0KQm9yb24sQg0KQ2FyYm9uLEMNCk5pdHJvZ2VuLE4NCk94eWdlbixPDQpGbHVvcmluZSxGDQpOZW9uLE5lDQpTb2RpdW0sTmENCk1hZ25lc2l1bSxNZw0KQWx1bWludW0sQWwNClNpbGljb24sU2kNClBob3NwaG9ydXMsUA0KU3VsZnVyLFMNCkNobG9yaW5lLENsDQpBcmdvbixBcg0KUG90YXNzaXVtLEsNCkNhbGNpdW0sQ2ENClNjYW5kaXVtLFNjDQpUaXRhbml1bSxUaQ0KVmFuYWRpdW0sVg0KQ2hyb21pdW0sQ3INCk1hbmdhbmVzZSxNbg0KSXJvbixGZQ0KQ29iYWx0LENvDQpOaWNrZWwsTmkNCkNvcHBlcixDdQ0KWmluYyxabg0KR2FsbGl1bSxHYQ0KR2VybWFuaXVtLEdlDQpBcnNlbmljLEFzDQpTZWxlbml1bSxTZQ0KQnJvbWluZSxCcg0KS3J5cHRvbixLcg0KUnViaWRpdW0sUmINClN0cm9udGl1bSxTcg0KWXR0cml1bSxZDQpaaXJjb25pdW0sWnINCk5pb2JpdW0sTmINCk1vbHliZGVudW0sTW8NClRlY2huZXRpdW0sVGMNClJ1dGhlbml1bSxSdQ0KUmhvZGl1bSxSaA0KUGFsbGFkaXVtLFBkDQpTaWx2ZXIsQWcNCkNhZG1pdW0sQ2QNCkluZGl1bSxJbg0KVGluLFNuDQpBbnRpbW9ueSxTYg0KVGVsbHVyaXVtLFRlDQpJb2RpbmUsSQ0KWGVub24sWGUNCkNlc2l1bSxDcw0KQmFyaXVtLEJhDQpMYW50aGFudW0sTGENCkNlcml1bSxDZQ0KUHJhc2VvZHltaXVtLFByDQpOZW9keW1pdW0sTmQNClByb21ldGhpdW0sUG0NClNhbWFyaXVtLFNtDQpFdXJvcGl1bSxFdQ0KR2Fkb2xpbml1bSxHZA0KVGVyYml1bSxUYg0KRHlzcHJvc2l1bSxEeQ0KSG9sbWl1bSxIbw0KRXJiaXVtLEVyDQpUaHVsaXVtLFRtDQpZdHRlcmJpdW0sWWINCkx1dGV0aXVtLEx1DQpIYWZuaXVtLEhmDQpUYW50YWx1bSxUYQ0KVHVuZ3N0ZW4sVw0KUmhlbml1bSxSZQ0KT3NtaXVtLE9zDQpJcmlkaXVtLElyDQpQbGF0aW51bSxQdA0KR29sZCxBdQ0KTWVyY3VyeSxIZw0KVGhhbGxpdW0sVGwNCkxlYWQsUGINCkJpc211dGgsQmkNClBvbG9uaXVtLFBvDQpBc3RhdGluZSxBdA0KUmFkb24sUm4NCkZyYW5jaXVtLEZyDQpSYWRpdW0sUmENCkFjdGluaXVtLEFjDQpUaG9yaXVtLFRoDQpQcm90YWN0aW5pdW0sUGENClVyYW5pdW0sVQ0KTmVwdHVuaXVtLE5wDQpQbHV0b25pdW0sUHUNCkFtZXJpY2l1bSxBbQ0KQ3VyaXVtLENtDQpCZXJrZWxpdW0sQmsNCkNhbGlmb3JuaXVtLENmDQpFaW5zdGVpbml1bSxFcw0KRmVybWl1bSxGbQ0KTWVuZGVsZXZpdW0sTWQNCk5vYmVsaXVtLE5vDQpMYXdyZW5jaXVtLExyDQpSdXRoZXJmb3JkaXVtLFJmDQpEdWJuaXVtLERiDQpTZWFib3JnaXVtLFNnDQpCb2hyaXVtLEJoDQpIYXNzaXVtLEhzDQpNZWl0bmVyaXVtLE10DQpEYXJtc3RhZHRpdW0sRHMNClJvZW50Z2VuaXVtLFJnDQpDb3Blcm5pY2l1bSxDbg0KTmlob25pdW0sTmgNCkZsZXJvdml1bSxGbA0KTW9zY292aXVtLE1jDQpMaXZlcm1vcml1bSxMdg0KVGVubmVzc2luZSxUcw0KT2dhbmVzc29uLE9n'
 #csv_64_decode = base64.b64decode(csv)
 #csv_result = open('du.csv', 'wb')
@@ -149,9 +147,9 @@ class RedRabbit(EscapeRoom):
                 " Aufhören , schreist du die Musikanlage an, jedoch passiert nichts. Hätte ich bloß nicht so viel getrunken mit dem Langohrhasen, ",
                 " dann hätte ich auch sofort eine Idee gehabt, das Gerät auszustellen. Doch dann siehst du die Erlösung: um die Musik auszuschalten ",
                 " musst du lediglich einen Pin von 3 Zahlen eingeben. Easy denkst du. Doch wie kriegst du den Pin heraus? ",
-                " Auf einem Zettel steht:<br><br><b>" + zettel + "<br><br>"
+                " Auf einem Zettel steht:<br><br><b>" + zettel + "<br><br>",
 
-                                                                 "<br>Gesamt: LASTCHRISTMAS",
+                "<br>Gesamt: LASTCHRISTMAS",
                 " Binärzahl",
                 " Binärzahl komprimieren",
                 " Alles klar, dann mal los!"
@@ -159,11 +157,14 @@ class RedRabbit(EscapeRoom):
             hints = [
                 "Zähle nach, wie oft welcher Buchstabe in dem Text, der auf dem Zettel steht, vorkommt",
                 "Der Text beginnt mit Last und endet mit special",
-                "Rechne die Anzahl der Zahlen, die sich hinter jedem einzelnen Buchstaben in diesem Satz Last Christmas I'll give you my heart zusammen",
-                "Nun berechne aus der Dezimalzahl eine Binärzahl",
+                "Rechne die Anzahl der Zahlen, die sich hinter jedem einzelnen Buchstaben in diesen Satzteilen LASTCHRISTMAS zusammen",
+                "Summe = L+A+S+T+C+H+R+I+S+T+M+A+S",
+                "Summe als Dezimalzahl berechnen",
+                "Nun wandel die Dezimalzahl in eine Binärzahl um",
                 "Dir fällt auf, dass der Pin aus 3 Zahlen besteht, die Binärzahl jedoch aus 9 Zahlen ",
                 "Komprimiere daher die Binärzahl ",
-                "Wichtig: Beginne vorne mit der 1 zu zählen ",
+                "Beispiel: 11100100011 zu 32132",
+                "Zähle daher von Anfang an, die gleichen Zahlen zusammen zu addieren, bis sich diese Zahl ändert",
                 "Gib den dreistelligen Pin ein"
             ]
         else:
@@ -175,28 +176,31 @@ class RedRabbit(EscapeRoom):
                     Last Christmas, I gave you my heart But the very next day you gave it away This year, to save me from tears I'll give it to someone special "
 
             task_messages = [
-                "Wie gut das heute alles in der Cloud läuf."
-                "Als er letztes Jahr auf seiner Tour war, fand er den Zettel mit den Zugangsdaten."
-                "Und seit dem Tag konnte er mit seinem Spotifyaccount mit sämtlichen Rewemärkten verknüpfen."
-                "Und er hatte eine Playlist speziell für diesen Tag. 24/7 never ending: "
-                "Die Zugangsdaten sind nur ein Pin von 3 Zahlen."
-                "Auf dem Zettel steht:<br><br><b>" + zettel + "<br><br>"
-                                                              "<br>Gesamt: MERRYCHRISTMAS",
+                "Wie gut das heute alles in der Cloud läuf.",
+                "Als er letztes Jahr auf seiner Tour war, fand er den Zettel mit den Zugangsdaten.",
+                "Und seit dem Tag konnte er mit seinem Spotifyaccount mit sämtlichen Rewemärkten verknüpfen.",
+                "Und er hatte eine Playlist speziell für diesen Tag.",
+                "Um seine Musik zu verknüpfen muss er nur die Zugangsdaten herausfinden",
+                "Die Zugangsdaten sind ganz einfach. Es ist nur ein Pin von 3 Zahlen.",
+                "Auf seinem Zettel mit den Zugangsdaten steht:<br><br><b>" + zettel + "<br><br>",
+
+                "<br>Gesamt: MERRYCHRISTMAS",
                 " Binärzahl",
                 " Binärzahl komprimieren",
                 " Alles klar, dann mal los!"
-
             ]
             hints = [
                 "Zähle nach, wie oft welcher Buchstabe in dem Text, der auf dem Zettel steht, vorkommt",
                 "Der Text beginnt mit Last und endet mit special",
-                "Rechne die Anzahl der Zahlen, die sich hinter jedem einzelnen Buchstaben in diesem Satz MERRYCHRISTMAS zusammen",
-                "Nun berechne aus der Dezimalzahl eine Binärzahl",
+                "Rechne die Anzahl der Zahlen, die sich hinter jedem einzelnen Buchstaben in diesen Satzteilen MERRYCHRISTMAS zusammen",
+                "Summe = M+E+R+R+Y+C+H+R+I+S+T+M+A+S",
+                "Summe als Dezimalzahl berechnen",
+                "Nun wandel die Dezimalzahl in eine Binärzahl um",
                 "Dir fällt auf, dass der Pin aus 3 Zahlen besteht, die Binärzahl jedoch aus 9 Zahlen ",
                 "Komprimiere daher die Binärzahl ",
-                "Wichtig: Beginne vorne mit der 1 zu zählen ",
+                "Beispiel: 11100100011 zu 32132",
+                "Zähle daher von Anfang an, die gleichen Zahlen zusammen zu addieren, bis sich diese Zahl ändert",
                 "Gib den dreistelligen Pin ein"
-
             ]
         return {"task_messages": task_messages, "hints": hints, "solution_function": self.level3, "data": zettel}
 
@@ -249,23 +253,23 @@ class RedRabbit(EscapeRoom):
     def create_level5(self):
         if run == 1:
 
-            story = " Holmium Holmium Holmium and a Holmium Copper Sulfur Polonium Copper Sulfur . <br>Welcome in Americium Erbium Iodine Calcium . \
-                    <br>We are in the Potassium Iodine Technetium Helium Neutron . <br>Thank you for the Scandium Hydrogen Sodium Phosphorus Sulfur Praseodymium Aluminum Iodine Neon . \
-                    <br>Iodine Americium the E Arsenic Tellurium Rubidium Uranium Nitrogen Nitrogen Yttrium and Iodine Americium sitting on my Uranium Nickel Cobalt Radon and watching you . \
-                    <br>On the table there are Barium Cobalt Neutron , Cobalt Oxygen Potassium Iodine Einsteinium , \
+            story = " Holmium Holmium Holmium and a Holmium Copper Sulfur Polonium Copper Sulfur . Welcome in Americium Erbium Iodine Calcium . \
+                    We are in the Potassium Iodine Technetium Helium Neutron . Thank you for the Scandium Hydrogen Sodium Phosphorus Sulfur Praseodymium Aluminum Iodine Neon . \
+                    Iodine Americium the E Arsenic Tellurium Rubidium Uranium Nitrogen Nitrogen Yttrium and Iodine Americium sitting on my Uranium Nickel Cobalt Radon and watching you . \
+                    On the table there are Barium Cobalt Neutron , Cobalt Oxygen Potassium Iodine Einsteinium , \
                     Fluorine Rhenium Nitrogen Carbon Hydrogen Francium Iodine Einsteinium , Barium Sodium Sodium Sulfur , \
-                    <br>Carbon Holmium Cobalt Lanthanum Tellurium , Beryllium Erbium and Tungsten Iodine Neon . \
-                    <br>But Iodine Americium Nobelium Neutron Aluminum Cobalt Holmium Lithium Carbon . \
-                    <br>You have the Americium Boron Iodine Titanium Oxygen Nitrogen and the Polonium Tungsten Erbium to solve this riddle , \
+                    Carbon Holmium Cobalt Lanthanum Tellurium , Beryllium Erbium and Tungsten Iodine Neon . \
+                    But Iodine Americium Nobelium Neutron Aluminum Cobalt Holmium Lithium Carbon . \
+                    You have the Americium Boron Iodine Titanium Oxygen Nitrogen and the Polonium Tungsten Erbium to solve this riddle , \
                     because you are a good Phosphorus Lanthanum Yttrium Erbium . \
-                    <br>Tungsten Oxygen Tungsten you made it this far . \
-                    <br>You are very Nickel Cerium and such a Germanium Nickel Uranium Sulfur and I still want to dr Iodine Neutron Potassium with you . \
-                    <br>Thorium Iodine Sulfur is your chance to get away : <br>the Phosphorus Iodine Nitrogen has three let Tellurium r Sulfur . \
-                    <br>A Hydrogen Iodine Nitrogen t : It is a Phosphorus Aluminum Indium dr Oxygen me . \
-                    <br>The Phosphorus Iodine Nitrogen  is  Tungsten Oxygen Tungsten \
-                    <br>because it is a Phosphorus Aluminum Indium dr Oxygen me ! \
-                    <br>Cobalt Nitrogen G Radium T Uranium Lanthanum Titanium Oxygen Nitrogen Sulfur ! \
-                    <br>The d Oxygen Oxygen r is Oxygen Phosphorus e Nitrogen ! "
+                    Tungsten Oxygen Tungsten you made it this far . \
+                    You are very Nickel Cerium and such a Germanium Nickel Uranium Sulfur and I still want to dr Iodine Neutron Potassium with you . \
+                    Thorium Iodine Sulfur is your chance to get away : the Phosphorus Iodine Nitrogen has three let Tellurium r Sulfur . \
+                    A Hydrogen Iodine Nitrogen t : It is a Phosphorus Aluminum Indium dr Oxygen me . \
+                    The Phosphorus Iodine Nitrogen  is  Tungsten Oxygen Tungsten \
+                    because it is a Phosphorus Aluminum Indium dr Oxygen me ! \
+                    Cobalt Nitrogen G Radium T Uranium Lanthanum Titanium Oxygen Nitrogen Sulfur ! \
+                    The d Oxygen Oxygen r is Oxygen Phosphorus e Nitrogen ! "
 
             task_messages = [
                 " Du läufst aus dem Rewe heraus und verdammt, schon wieder ein verschlossener Raum. Wie gewonnen so zerronnen. ",
@@ -278,35 +282,34 @@ class RedRabbit(EscapeRoom):
             hints = [
                 "Kommen dir bestimmte Begriffe nicht aus dem Schulunterricht bekannt vor? ",
                 "Es klingt wie Harry Potter, aber es hat nichts mit ihm zutun ",
-                "Es gab ein Fach in der Schule, welches sich auf die oberen Elemente bezogen haben, "
+                "Es gab ein Fach in der Schule, welches sich auf die oberen Elemente bezogen haben. ",
                 "Richtig, der Chemie-Unterricht ",
                 "Du erkennst hier Abkürzungen für die Elemente, in englischer Sprache ",
                 "Rein zufällig existiert auf Github eine CSV-Datei, die Elements.csv heißt ",
                 "Lies die csv-Datei ein ",
                 "Versuche die Elemente durch die Abkuerzungen zu ersetzen ",
                 "Anschließend kannst du den Text entschluesseln, sobald du die Abkuerzungen ersetzt hast",
-                "Sobald du erkennst, wie der Pin sich zusammensetzt, musst du diesen auch noch beweisen ",
                 "Dann mal los"
 
             ]
         else:
-            story = " Holmium Holmium Holmium and a Holmium Copper Sulfur Polonium Copper Sulfur . <br>Welcome in Americium Erbium Iodine Calcium . \
-                    <br>We are in the Potassium Iodine Technetium Helium Neutron . <br>Thank you for the Scandium Hydrogen Sodium Phosphorus Sulfur Praseodymium Aluminum Iodine Neon . \
-                    <br>Iodine Americium the E Arsenic Tellurium Rubidium Uranium Nitrogen Nitrogen Yttrium and Iodine Americium sitting on my Uranium Nickel Cobalt Radon and watching you . \
-                    <br>On the table there are Barium Cobalt Neutron , Cobalt Oxygen Potassium Iodine Einsteinium , \
+            story = " Holmium Holmium Holmium and a Holmium Copper Sulfur Polonium Copper Sulfur . Welcome in Americium Erbium Iodine Calcium . \
+                    We are in the Potassium Iodine Technetium Helium Neutron . Thank you for the Scandium Hydrogen Sodium Phosphorus Sulfur Praseodymium Aluminum Iodine Neon . \
+                    Iodine Americium the E Arsenic Tellurium Rubidium Uranium Nitrogen Nitrogen Yttrium and Iodine Americium sitting on my Uranium Nickel Cobalt Radon and watching you . \
+                    On the table there are Barium Cobalt Neutron , Cobalt Oxygen Potassium Iodine Einsteinium , \
                     Fluorine Rhenium Nitrogen Carbon Hydrogen Francium Iodine Einsteinium , Barium Sodium Sodium Sulfur , \
-                    <br>Carbon Holmium Cobalt Lanthanum Tellurium , Beryllium Erbium and Tungsten Iodine Neon . \
-                    <br>But Iodine Americium Nobelium Neutron Aluminum Cobalt Holmium Lithium Carbon . \
-                    <br>You have the Americium Boron Iodine Titanium Oxygen Nitrogen and the Polonium Tungsten Erbium to solve this riddle , \
+                    Carbon Holmium Cobalt Lanthanum Tellurium , Beryllium Erbium and Tungsten Iodine Neon . \
+                    But Iodine Americium Nobelium Neutron Aluminum Cobalt Holmium Lithium Carbon . \
+                    You have the Americium Boron Iodine Titanium Oxygen Nitrogen and the Polonium Tungsten Erbium to solve this riddle , \
                     because you are a good Phosphorus Lanthanum Yttrium Erbium . \
-                    <br>Oxygen Hydrogen Oxygen you made it this far . \
-                    <br>You are very Nickel Cerium and such a Germanium Nickel Uranium Sulfur and I still want to dr Iodine Neutron Potassium with you . \
-                    <br>Thorium Iodine Sulfur is your chance to get away : <br>the Phosphorus Iodine Nitrogen has three let Tellurium r Sulfur . \
-                    <br>A Hydrogen Iodine Nitrogen t : It is a Phosphorus Aluminum Indium dr Oxygen me . \
-                    <br>The Phosphorus Iodine Nitrogen  is  Oxygen Hydrogen Oxygen \
-                    <br>because it is a Phosphorus Aluminum Indium dr Oxygen me ! \
-                    <br>Cobalt Nitrogen G Radium T Uranium Lanthanum Titanium Oxygen Nitrogen Sulfur ! \
-                    <br>The d Oxygen Oxygen r is Oxygen Phosphorus e Nitrogen ! "
+                    Oxygen Hydrogen Oxygen you made it this far . \
+                    You are very Nickel Cerium and such a Germanium Nickel Uranium Sulfur and I still want to dr Iodine Neutron Potassium with you . \
+                    Thorium Iodine Sulfur is your chance to get away : the Phosphorus Iodine Nitrogen has three let Tellurium r Sulfur . \
+                    A Hydrogen Iodine Nitrogen t : It is a Phosphorus Aluminum Indium dr Oxygen me . \
+                    The Phosphorus Iodine Nitrogen  is  Oxygen Hydrogen Oxygen \
+                    because it is a Phosphorus Aluminum Indium dr Oxygen me ! \
+                    Cobalt Nitrogen G Radium T Uranium Lanthanum Titanium Oxygen Nitrogen Sulfur ! \
+                    The d Oxygen Oxygen r is Oxygen Phosphorus e Nitrogen ! "
 
             task_messages = [
                 "Das war Frau Speckmann am Telefon.",
@@ -330,7 +333,6 @@ class RedRabbit(EscapeRoom):
                 "Lies die csv-Datei ein ",
                 "Versuche die Elemente durch die Abkuerzungen zu ersetzen ",
                 "Anschließend kannst du den Text entschluesseln, sobald du die Abkuerzungen ersetzt hast",
-                "Sobald du erkennst, wie der Pin sich zusammensetzt, musst du diesen auch noch beweisen ",
                 "Dann mal los"
             ]
 
@@ -484,18 +486,34 @@ class RedRabbit(EscapeRoom):
 
         return self.compress(binary)
 
-    def compress(self, zahl):
-        whole_number = 0
-        first_number = "1"
+    def compress(self, binaereZahl):
         finish_number = []
+        anzEins = 0
+        anzNull = 0
+        laengeZahl = len(binaereZahl)
 
-        for element in zahl:
-            if element != first_number:
-                finish_number.append(whole_number)
-                whole_number = 0
-            whole_number += 1
-            first_number = element
-        finish_number.append(whole_number)
+        for index, elem in enumerate(binaereZahl, start=0):
+            if elem == "1":
+                anzEins += 1
+                if index+1 < laengeZahl:
+                    if binaereZahl[index+1] != "1":
+                        finish_number.append(anzEins)
+                        anzEins = 0
+                    else:
+                        continue
+                else:
+                    finish_number.append(anzEins)
+            else:
+                anzNull +=1
+                if index+1 < laengeZahl:
+                    if binaereZahl[index+1] != "0":
+                        finish_number.append(anzNull)
+                        anzNull = 0
+                    else:
+                        continue
+                else:
+                    finish_number.append(anzNull)
+
         return finish_number
 
     def level4_check_identity_card_validity(self, json_choice):
