@@ -12,16 +12,32 @@ def run(zettel):
 
     return compress(binary)
             
-def compress(zahl):
-    whole_number = 0
-    first_number = "1"
+def compress(self, binaereZahl):
     finish_number = []
-   
-    for element in zahl:
-        if element != first_number:
-            finish_number.append(whole_number)
-            whole_number = 0
-        whole_number += 1
-        first_number = element
-    finish_number.append(whole_number) 
+    anzEins = 0
+    anzNull = 0
+    laengeZahl = len(binaereZahl)
+
+    for index, elem in enumerate(binaereZahl, start=0):
+        if elem == "1":
+            anzEins += 1
+            if index+1 < laengeZahl:
+                if binaereZahl[index+1] != "1":
+                    finish_number.append(anzEins)
+                    anzEins = 0
+                else:
+                    continue
+            else:
+                finish_number.append(anzEins)
+        else:
+            anzNull +=1
+            if index+1 < laengeZahl:
+                if binaereZahl[index+1] != "0":
+                    finish_number.append(anzNull)
+                    anzNull = 0
+                else:
+                    continue
+            else:
+                finish_number.append(anzNull)
+
     return finish_number
