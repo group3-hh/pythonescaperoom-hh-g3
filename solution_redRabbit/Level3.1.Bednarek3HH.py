@@ -12,7 +12,7 @@ def run(zettel):
 
     return compress(binary)
             
-def compress(self, binaereZahl):
+def compress(binaereZahl):
     finish_number = []
     anzEins = 0
     anzNull = 0
