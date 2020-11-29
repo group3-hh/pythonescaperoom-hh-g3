@@ -176,13 +176,13 @@ class RedRabbit(EscapeRoom):
                     Last Christmas, I gave you my heart But the very next day you gave it away This year, to save me from tears I'll give it to someone special "
 
             task_messages = [
-                "Wie gut das heute alles in der Cloud läuf.",
-                "Als er letztes Jahr auf seiner Tour war, fand er den Zettel mit den Zugangsdaten.",
-                "Und seit dem Tag konnte er mit seinem Spotifyaccount mit sämtlichen Rewemärkten verknüpfen.",
-                "Und er hatte eine Playlist speziell für diesen Tag.",
-                "Um seine Musik zu verknüpfen muss er nur die Zugangsdaten herausfinden",
-                "Die Zugangsdaten sind ganz einfach. Es ist nur ein Pin von 3 Zahlen.",
-                "Auf seinem Zettel mit den Zugangsdaten steht:<br><br><b>" + zettel + "<br><br>",
+                "Wie gut das heute alles in der Cloud läuft. Als er letztes Jahr auf seiner Tour war fand er den.",
+                "Zettel mit den Zugangsdaten. Und seit dem Tag konnte er mit seinem Spotifyaccount mit ",
+                "sämtlichen Rewemärkten verknüpfen. Und er hatte eine Playlist speziell für diesen Tag. 24/7 ",
+                "never ending. Er wartete nun schon eine Weile hinter den unverkauften Adventskalender um",
+                "die Freude des Nikolauses beim Erklingen seiner Playlist zu sehen.",
+                "Die 3. stellige Pin um die Anlage zu deaktivieren konnte man ich easy mit einer Eselsbrücke merken.",
+                "Die ging wie folgt:<br><br><b>" + zettel + "<br><br>",
 
                 "<br>Gesamt: MERRYCHRISTMAS",
                 " Binärzahl",
@@ -238,11 +238,12 @@ class RedRabbit(EscapeRoom):
             json_choice = random.choice(["{\"identitycard\":[{\"idnumber\":\"L9VXUWTCA7\",\"birthdate\":\"7611072\",\"expirydate\":\"2408035D\",\"totalchecknumber\":\"2\"}]}",
                                         "{\"identitycard\":[{\"idnumber\":\"T6VXYQYZU5\",\"birthdate\":\"9107038\",\"expirydate\":\"2104212D\",\"totalchecknumber\":\"9\"}]}"])
             task_messages = [
-                "Bester Tag ever. Er konnte sich den verkaterten Zottel bildlich vorstellen. Frau Speckmann hatte er gebrieft,<br>",
-                "sie würde ihn ein wenig aufhalten, während er prüft ob seine Playlist noch läuft.<br>",
-                "Bei Frau Speckmann kaufte er häufig für sein Leibgericht ein, falscher Hase. Sie hatten sich ein paar mal auf<br>",
+                "Bester Tag ever. Er hatte Frau Speckmann in seinen Plan eingeweiht, sie würde ihn ein ",
+                "wenig aufhalten, während er sich schnell auf den Weg in die Büroküche macht.",
+                "Bei Frau Speckmann kaufte er häufig für sein Leibgericht ein, falscher Hase. Sie hatten sich ",
                 "einen Kaffee getroffen und dabei hatte Sie ihm gezeigt wie man schlecht gefälschte Ausweise in der maschinenlesbaren Zone erkennt.<br><br>",
-                "Wie ging dass doch gleich bei nachfolgendem Ausweis?<br><br><b>"+json_choice+"</b><br><br>",
+                "ein paar mal auf einen Kaffee getroffen und dabei hatte Sie ihm gezeigt wie man schlecht ",
+                "gefälschte Ausweise erkennt. Wie ging dass doch gleich: <br><br><b>"+json_choice+"</b><br><br>",
                 "<b>Schreibe eine Methode run(\"json_choice\"), die als Ergebnis deiner Prüfung Wahr oder Falsch zurückgibt!</b>"
             ]
             hints = [
@@ -312,15 +313,12 @@ class RedRabbit(EscapeRoom):
                     The d Oxygen Oxygen r is Oxygen Phosphorus e Nitrogen ! "
 
             task_messages = [
-                "Das war Frau Speckmann am Telefon.",
-                "Der Schnapspralinenkurier ist auf dem Weg.",
-                "Ok, Zeit für das große Finale. ",
-                "Nebelmaschiene ? Check.",
-                "Einhorn ? Check.",
-                "Stimmenmodulator? Check.",
-                "Wenn es läuft wie immer würde er, bevor er seinem Chef unter die Augen tritt, kurz in der Mitarbeiterküche halt machen",
-
-                "Gerade noch Zeit für eine letzte Generalprobe."
+                "Das war Frau Speckmann am Telefon. Der Schnapspralinenkurier ist auf dem Weg. Ok, Zeit",
+                "für das große Finale. Nagelmaschine ? Check. Einhorn? Check. Stimmenmodulator? Check.",
+                "Ok, jetzt leise sein, das Büro von Santa ist direkt neben an. Also ab aufs Einhorn.",
+                "Gerade noch Zeit für eine letzte Generalprobe.",
+                "Diesen Text übersetzen und die Tür wird sich öffen:",
+                "<br><br><b>" + story + "<br><br>"
             ]
 
             hints = [
