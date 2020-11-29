@@ -40,16 +40,16 @@ class RedRabbit(EscapeRoom):
             numbers.append(n)
         if run == 1:
             task_messages = [
-                "Mit brummenden Schädel erwachte der rot bemantelte Mann. Nie wieder den selbst gepanschten Eierlikör des langohrigen schwor er sich",
+                "Mit brummenden Schädel erwachte der rot bemantelte Mann. Nie wieder den selbst gepanschten Eierlikör des langohrigen schwor er sich.",
                 "Was ist heute bloß für ein Tag? Ach herrje, ein Arbeitstag. Wenn mein Vorgesetzter Santa Claus das sieht, dann bekomme ich ein dickes Problem.",
                 "Mal gucken, was ich heute noch besorgen soll für ihn. Er griff nach seinem Handy.",
-                "Verdammt dunkel hier, wie war noch die Pin seines Handy? Natürlich hatte dieser pelzige Eierdieb wieder seine Pin geändert",
-                "Und wie beim letztem Mal klebte ein Zettel an seinem Handy",
+                "Verdammt dunkel hier, wie war noch die Pin seines Handy? Natürlich hatte dieser pelzige Eierdieb wieder seine Pin geändert.",
+                "Und wie beim letztem Mal klebte ein Zettel an seinem Handy.",
                 "Merke dir folgende Zahlen:",
                 f"<b> {numbers} </b ",
                 "Suche dir die größte gerade dreistellige Zahl die kein Zahlenpalindrom ist und deren Umkehrzahl kleiner ist als sie selbst.",
                 "Subtrahiere davon deren Umkehrzahl und addiere zu diesem Ergebnis wiederum die Umkehrzahl des Ergebnisses.",
-                "Und zack da ist deine Pin",
+                "Und zack da ist deine Pin.",
                 "Ach ja... ,wenn das erste Teilergebnis ein zweistelliges Ergebnis zur Folge hat, stellt man der Zahl eine Null voran.",
             ]
         else:
@@ -86,21 +86,21 @@ class RedRabbit(EscapeRoom):
             liste = ['5663686e61', '454255a547', '5663666e61', '5ac4e54e45', '6adc4e4445', '429c434b45', 'c45256a45','57d64c46c5', '5a41484d65', '4a4f1b4552', '27d74c43c5', '5a4f464542 ', '46796e6573 ','64f6727065 ', '4b7c49434b ', '624c49334b', '666c67734b', '505041545a', '4bd6544562', '1c414e5a45','4c454e5645', 'ebc4534947', '4b6c495050', '686c696666', '6b6c616d6d', '5a31554e53', '5a61756e73','7a61756e73']
 
             task_messages = [
-                "\"Du hast dein Handy entsperrt!!! Nice! 1089 magische Zahl und mega belastend wenn man drüber nachdenkt\"" ,
-                "Belastend war das Wort, welches ihm bei seinem Vorgesetztem Santa Claus einfiel.",
-                "\"Wenn du nachher deine Schicht beendet hast und deinen Mantel abholst, dann bring mir bitte was aus dem Rewe Raum mit?\"",
-                "\"Weil du so auf Rätsel stehst hab ich dir meinen Wunsch auf dein Handy gehext.!",
-                "Aber natürlich nicht auf die simple Art. Bilde die Potenz von 1089 bis das Ergebnis genügend Ziffern hat um aus jeden Feld ein Zeichen auszuscheiden.",
-                "Nutze die Ziffern um die richtigen Zeichen in den Feldern zu finde und dann füge die Zeichen zusammen bevor du sie entzauberst",
+                "\"Du hast dein Handy entsperrt!!! Nice! 1089 magische Zahl und mega belastend, wenn man drüber nachdenkt.\"" ,
+                "Belastend war das Wort, welches ihm bei seinem Vorgesetzten Santa Claus einfiel.",
+                "\"Wenn du nachher deine Schicht beendet hast und deinen Mantel abholst, dann bring mir bitte was aus dem Rewe Raum mit!\"",
+                "\"Weil du so auf Rätsel stehst hab ich dir meinen Wunsch auf dein Handy gehext!",
+                "Aber natürlich nicht auf die simple Art. Bilde die Potenz von 1089 bis das Ergebnis genügend Ziffern hat, um aus jedem Feld ein Zeichen auszuscheiden.",
+                "Nutze die Ziffern, um die richtigen Zeichen in den Feldern zu finden und dann füge die Zeichen zusammen, bevor du sie entzauberst.",
                 f"<b> {liste} </b ",
                 "Genau Rätsel... das war der Grund warum er diesen Job gewählt hatte... Nicht, dass er nur einmal im Jahr arbeiten musste!",
-                "Die Spielzeugproduktion hatte er vor Jahren outgesourct und wurde durch Lizenzeinnahmen finanziert",
-                "welche größtenteils durch einen Namenhaften Getränkehersteller hereinsprudelten.",
-                "Er konnte ihn sich vorstellen wie der langohrige da kichernd in seinem Ostergras saß und neben dem Spiegel seinen Einkaufswunsch verhexte"
+                "Die Spielzeugproduktion hatte er vor Jahren outgesourct und wurde durch Lizenzeinnahmen finanziert,",
+                "welche größtenteils durch einen namenhaften Getränkehersteller hereinsprudelten.",
+                "Er konnte ihn sich vorstellen, wie der Langohrige da kichernd in seinem Ostergras saß und neben dem Spiegel seinen Einkaufswunsch verhexte."
                 ]
 
             hints = [
-                "1089**2 sind 1185921,und damit 7 Zeichen, die Liste hat aber mehr Werte ",
+                "1089**2 sind 1185921 und damit 7 Zeichen, die Liste hat aber mehr Werte",
                 "Wenn du das richtige Ergebnis hast, verrät dir die erste Ziffer den gesuchten Wert im ersten Feld, die 2. Ziffer der?",
                 "Do we count from 0 or from 1 ?",
                 "Er verhexte seinen Wunsch und verbinärte ihn nicht",
@@ -273,11 +273,15 @@ class RedRabbit(EscapeRoom):
                     The d Oxygen Oxygen r is Oxygen Phosphorus e Nitrogen ! "
 
             task_messages = [
-                " Du läufst aus dem Rewe heraus und verdammt, schon wieder ein verschlossener Raum. Wie gewonnen so zerronnen. ",
-                " Wann endet dieses Martyrium? Du schaust dich um und erkennst, dass du in einer Küche stehst. ",
-                " Es ist ziemlich benebelt im Raum und du erkennst am Ende der Küche einen finsteren Reiter.",
-                " Der Reiter gibt dir einen Brief, den du entziffern musst. Auf dem Brief steht: <br><br><b>" + story + "<br><br>",
-                "<br>Sobald du den Brief entzifferst und das Lösungswort vorliest, öffnet sich die Tür. "
+                " In der Firma angekommen:  ",
+                " Vor dem Bürozimmer befindet sich die BüroKüche, diese ist ziemlich finster, abgedunkelt sowie vernebelt.",
+                " Er findet die Tür zum Büro, jedoch ist diese verschlossen. Er erkennt, dass am Ende des Raumes eine große Gestalt steht.",
+                " Es ist der Osterhase, der mit ihm am Abend zuvor gebechert hat. Der Osterhase sitzt auf einem Einhorn.",
+                " Er sagt ihm, dass die Tür erst aufgeht, wenn er seinen Brief übersetzt.",
+                " Im Brief steht, dass der Osterhase erneut mit ihm bechern will.",
+                " Natürlich will Nikolaus schnell weg, weil er dies nicht möchte.",
+                " Sobald du den Brief entzifferst und das Lösungswort vorliest, öffnet sich die Tür. ",
+                " <br><br><b>" + story + "<br><br>"
             ]
 
             hints = [
@@ -286,7 +290,7 @@ class RedRabbit(EscapeRoom):
                 "Es gab ein Fach in der Schule, welches sich auf die oberen Elemente bezogen haben. ",
                 "Richtig, der Chemie-Unterricht ",
                 "Du erkennst hier Abkürzungen für die Elemente, in englischer Sprache ",
-                "Rein zufällig existiert auf Github eine CSV-Datei, die Elements.csv heißt ",
+                "Rein zufällig existiert auf Github  eine <a href='https://github.com/group3-hh/pythonescaperoom-hh-g3/blob/master/Elements.csv'> CSV-Datei </a>, die Elements.csv heißt ",
                 "Lies die csv-Datei ein ",
                 "Versuche die Elemente durch die Abkuerzungen zu ersetzen ",
                 "Anschließend kannst du den Text entschluesseln, sobald du die Abkuerzungen ersetzt hast",
