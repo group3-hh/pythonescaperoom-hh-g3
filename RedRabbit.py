@@ -55,19 +55,19 @@ class RedRabbit(EscapeRoom):
         else:
             task_messages = [
                 "<b> On Night before </>",
-                "Zugegeben der Likör war ein bisschen stärker als sonst, aber das der bärtige so schnell aus den Latschen kippt....",
-                "Vielleicht besser so, jedes Jahr das selbe...einen Tag bevor er arbeiten muss.... nur gejammer",
-                "Ok, noch nen lütten... aber dann ab ist Schluss ",
-                "\"Hui, der is ja komplett weggetreten muahahah... Morgen muss er Arbeiten... Ich mal ihm was ins Gesicht\"",
-                "\"Nein warte... das wäre kindisch.... Ich rasier ihm den Bart ab.... Nein warte ... das hatten wir schon und er wäre fast gefeuert worden",
-                "\"Ok erstmal seine Handy Pin ändern\"",
+                "Zugegeben der Likör war ein bisschen stärker als sonst, aber das der Bärtige so schnell aus den Latschen kippt....",
+                "Vielleicht besser so, jedes Jahr das Selbe...einen Tag bevor er arbeiten muss.... nur Gejammer.",
+                "Ok, noch nen Lütten... aber dann ist Schluss.",
+                "\"Hui, der ist ja komplett weggetreten muahahah... Morgen muss er arbeiten... Ich mal ihm was ins Gesicht.\"",
+                "\"Nein warte... das wäre kindisch.... Ich rasier ihm den Bart ab.... Nein warte ... das hatten wir schon und er wäre fast gefeuert worden.",
+                "\"Ok erstmal seine Handy Pin ändern.\"",
                 "Er wusste, dass sein Kompagnon Rätsel hasste, warum sonst waren alle Sudoku im Bad unangetastet?",
-                "Also würden er ein paar Rätsel testen, aber vorher noch nen lütten",
+                "Also würde er ein paar Rätsel testen, aber vorher noch nen Lütten.",
                 "Merke dir folgende Zahlen:",
                 f"<b> {numbers} </b ",
                 "Suche dir die kleinste ungerade dreistellige Zahl die kein Zahlenpalindrom ist und deren Umkehrzahl kleiner ist als sie selbst.",
                 "Subtrahiere davon deren Umkehrzahl und addiere zu diesem Ergebnis wiederum die Umkehrzahl des Ergebnisses.",
-                "Und zack da ist deine Pin",
+                "Und zack, da ist deine Pin.",
                 "Ach ja... ,wenn das erste Teilergebnis ein zweistelliges Ergebnis zur Folge hat, stellt man der Zahl eine Null voran.",
 
             ]
@@ -114,9 +114,9 @@ class RedRabbit(EscapeRoom):
         else:
             liste = ['5653686e61', '434255a547', '5663666e61', '5ac4354e45', '6adc4e4445', '428c434b45', 'c45256a45','57d64c46e5', '5a41484d65', '4a4f1b4552', '27d74c43c5', '5a4f464540', '46796e6573', '64f6720365','4b7c49434b', '624c49034b', '666c6774b', '626c67734b', '505041546a', '1bd6544562', '4c454e5645','cbc4534947', '4b6c495050', '696c696666', '6b6c616d6d', '5ae1554e53', '6a61756e73', '7a61756e75']
             task_messages = [
-                "Jetzt muss ich nur noch dafür sorgen, dass er morgen beim Rewe vorbeischaut. Ich schicke ihm eine Nachricht im Namen seines Chefs, dass sollte reichen.",
+                "Jetzt muss ich nur noch dafür sorgen, dass er morgen beim Rewe vorbeischaut. Ich schicke ihm eine Nachricht im Namen seines Chefs, das sollte reichen.",
                 "Er sollte aber wach sein und nicht mehr im Halbschlaf.... Ich lasse ihn ein wenig rätseln, das macht wach.",
-                "Nach wenigen min war das Rätsel fertig und der letzte Test ob das ganze funktionierte stand an.",
+                "Nach wenigen Minuten war das Rätsel fertig und der letzte Test, ob das Ganze funktionierte stand an.",
                 f"<b> {liste} </b ",
                 "Bilde die Potenz von 1089 bis das Ergebnis genügend Ziffern hat um aus jeden Feld ein Zeichen auszuscheiden.",
                 "Dann muss nur noch der Reihenfolge nach die Zeichen ausschneiden, zusammensetzen. Sehr gut. Letzter Test und dann ab mit der Nachricht."
@@ -176,12 +176,11 @@ class RedRabbit(EscapeRoom):
                     Last Christmas, I gave you my heart But the very next day you gave it away This year, to save me from tears I'll give it to someone special "
 
             task_messages = [
-                "Wie gut das heute alles in der Cloud läuft. Als er letztes Jahr auf seiner Tour war fand er den.",
-                "Zettel mit den Zugangsdaten. Und seit dem Tag konnte er mit seinem Spotifyaccount mit ",
-                "sämtlichen Rewemärkten verknüpfen. Und er hatte eine Playlist speziell für diesen Tag. 24/7 ",
-                "never ending. Er wartete nun schon eine Weile hinter den unverkauften Adventskalender um",
-                "die Freude des Nikolauses beim Erklingen seiner Playlist zu sehen.",
-                "Die 3. stellige Pin um die Anlage zu deaktivieren konnte man ich easy mit einer Eselsbrücke merken.",
+                "Wie gut, dass heute alles in der Cloud läuft. Als er letztes Jahr auf seiner Tour war, fand er den Zettel mit den Zugangsdaten.",
+                "Und seit dem Tag konnte er sich mit seinem Spotifyaccount mit sämtlichen Rewemärkten verknüpfen.",
+                "Und er hatte eine Playlist speziell für diesen Tag. 24/7 never ending.",
+                "Er wartete nun schon eine Weile hinter den unverkauften Adventskalender um die Freude des Nikolauses beim Erklingen seiner Playlist zu sehen.",
+                "Die dreistellige Pin, um die Anlage zu deaktivieren, konnte man sich easy mit einer Eselsbrücke merken.",
                 "Die ging wie folgt:<br><br><b>" + zettel + "<br><br>",
 
                 "<br>Gesamt: MERRYCHRISTMAS",
@@ -238,12 +237,12 @@ class RedRabbit(EscapeRoom):
             json_choice = random.choice(["{\"identitycard\":[{\"idnumber\":\"L9VXUWTCA7\",\"birthdate\":\"7611072\",\"expirydate\":\"2408035D\",\"totalchecknumber\":\"2\"}]}",
                                         "{\"identitycard\":[{\"idnumber\":\"T6VXYQYZU5\",\"birthdate\":\"9107038\",\"expirydate\":\"2104212D\",\"totalchecknumber\":\"9\"}]}"])
             task_messages = [
-                "Bester Tag ever. Er hatte Frau Speckmann in seinen Plan eingeweiht, sie würde ihn ein ",
-                "wenig aufhalten, während er sich schnell auf den Weg in die Büroküche macht.",
-                "Bei Frau Speckmann kaufte er häufig für sein Leibgericht ein, falscher Hase. Sie hatten sich ",
-                "einen Kaffee getroffen und dabei hatte Sie ihm gezeigt wie man schlecht gefälschte Ausweise in der maschinenlesbaren Zone erkennt.<br><br>",
-                "ein paar mal auf einen Kaffee getroffen und dabei hatte Sie ihm gezeigt wie man schlecht ",
-                "gefälschte Ausweise erkennt. Wie ging dass doch gleich: <br><br><b>"+json_choice+"</b><br><br>",
+                "Bester Tag ever. Er hatte Frau Speckmann in seinen Plan eingeweiht, sie würde ihn ein wenig aufhalten,",
+                "während er sich schnell auf den Weg in die Büroküche macht.",
+                "Bei Frau Speckmann kaufte er häufig für sein Leibgericht ein, falscher Hase.",
+                "Sie hatten sich ein paar mal auf einen Kaffee getroffen und dabei hatte Sie ihm gezeigt wie man",
+                "schlecht gefälschte Ausweise in der maschinenlesbaren Zone erkennt.",
+                "Wie ging dass doch gleich: <br><br><b>"+json_choice+"</b><br><br>",
                 "<b>Schreibe eine Methode run(\"json_choice\"), die als Ergebnis deiner Prüfung Wahr oder Falsch zurückgibt!</b>"
             ]
             hints = [
@@ -317,9 +316,12 @@ class RedRabbit(EscapeRoom):
                     The d Oxygen Oxygen r is Oxygen Phosphorus e Nitrogen ! "
 
             task_messages = [
-                "Das war Frau Speckmann am Telefon. Der Schnapspralinenkurier ist auf dem Weg. Ok, Zeit",
-                "für das große Finale. Nagelmaschine ? Check. Einhorn? Check. Stimmenmodulator? Check.",
-                "Ok, jetzt leise sein, das Büro von Santa ist direkt neben an. Also ab aufs Einhorn.",
+                "Das war Frau Speckmann am Telefon. Der Schnapspralinenkurier ist auf dem Weg.",
+                "Ok, Zeit für das große Finale.",
+                "Nebelmaschine ? Check.",
+                "Einhorn? Check.",
+                "Stimmenmodulator? Check.",
+                "Ok, jetzt leise sein, das Büro von Santa ist direkt nebenan. Also ab aufs Einhorn.",
                 "Gerade noch Zeit für eine letzte Generalprobe.",
                 "Diesen Text übersetzen und die Tür wird sich öffen:",
                 "<br><br><b>" + story + "<br><br>"
@@ -376,11 +378,11 @@ class RedRabbit(EscapeRoom):
             task_messages = [
                 "Es dauerte eine geschlagene Stunde bis er sich wieder beruhigt hatte. Sein Bauch schmerzte noch immer vom vielen Lachen. Der Gesichtsausdruck .... göttlich.<br>",
                 "Damit sollten doch die Grenze für 1 Mio. Abonnenten auf Youtube zu knacken sein. Aber vorher musste erstmal die geliehene Nebelmaschine und das andere Geraffel<br>",
-                "wieder zurückgebracht werden, ehe jemand Fragen stellt. Die Fortbildung die Sie aus gewerkschaftlichen Gründen machen mussten hatten doch auch ihr Gutes.<br><br>",
-                "Im letzten Jahr hatte ich zusammen mit dem Winterarbeiter diesen Programmierkurs gemacht. Und was trainiert besser als das Wissen in der Praxis anzuwenden.<br>",
-                "War ja nicht seine Schuld dass die Lagerhalle nebenan die Zugangsdaten offen im Internet unter <b>https://pythonescaperoom.soeren-steinberg.de/alert.db </b><br>",
-                "stehen ließ. Mal schauen wer ihm heute den Zutritt gewährte. Anschließend musste er zwingend telefonieren und die Wogen glätten. Kartoffelsalat und Würstchen<br>",
-                "waren quasi schon vorbereitet.<br><br>",
+                "wieder zurückgebracht werden, ehe jemand Fragen stellt. Die Fortbildung, die Sie aus gewerkschaftlichen Gründen machen mussten, hatten doch auch ihr Gutes.<br><br>",
+                "Im letzten Jahr hatte ich zusammen mit dem Winterarbeiter diesen Programmierkurs gemacht. Und was trainiert besser, als das Wissen in der Praxis anzuwenden.<br>",
+                "War ja nicht seine Schuld, dass die Lagerhalle nebenan die Zugangsdaten offen im Internet unter <b>https://pythonescaperoom.soeren-steinberg.de/alert.db </b><br>",
+                "stehen ließ. Mal schauen wer ihm heute den Zutritt gewährte. Anschließend musste er zwingend telefonieren und die Wogen glätten",
+                "Kartoffelsalat und Würstchen waren quasi schon vorbereitet.",
                 "<b>Schreibe eine Methode run(\"name_choice\"), die als Ergebnis ein JSON-Objekt mit den Eigenschaftsnamen firstname, lastname, securitycard_number und pin zurückgibt!</b><br>",
                 "Das Zutrittssystem erfordert die Werte der Eigenschaftsnamen im Base64 Format!"
             ]
@@ -396,11 +398,11 @@ class RedRabbit(EscapeRoom):
         if run == 1:
 
             task_messages = [
-                "Du hast es geschafft, aber wenn du erfahren willst was genau den Nikolaus so umgehauen hat, wirst du auch dieses Level meistern müssen !! ",
-                "Hier ist der erste Teil einer kleinen Belohnung, die dich Erwartet.",
-                "Die Zutatenliste enthält durch einen dummen Zufall die Zutaten und Mengenangabe in der falschen Reihenfolge",
-                "Entferne und merke dir jede 3 dritte Zutat aus der Liste, bis sie leer ist.",
-                "Mach dasselbe mit der Mengenangabe allerdings nimm hier jede 5 Element aus der Liste, bis sie leer ist.",
+                "Du hast es geschafft, aber wenn du erfahren willst, was genau den Nikolaus so umgehauen hat, wirst du auch dieses Level meistern müssen !! ",
+                "Hier ist der erste Teil einer kleinen Belohnung, die dich erwartet.",
+                "Die Zutatenliste enthält durch einen dummen Zufall die Zutaten und Mengenangabe in der falschen Reihenfolge.",
+                "Entferne und merke dir jede 3. Zutat aus der Liste, bis sie leer ist.",
+                "Mach dasselbe mit der Mengenangabe allerdings nimm hier jedes 5. Element aus der Liste, bis sie leer ist.",
                 "Füge das Ganze zu einem Wörterbuch mit der Zutat und der Mengenangabe zusammen und schicke es mir ;).",
                 f"<b> {meng} </b ",
                 "Und ja.... das ist nur die Zutatenliste.... Spiele noch mal um die ganze Geschichte zu erfahren und das Rezept zu vervollständigen.",
@@ -419,11 +421,11 @@ class RedRabbit(EscapeRoom):
         else:
 
             task_messages = [
-                "Nun ist es geschafft",
+                "Nun ist es geschafft!!",
                 "Du findest nach dem Beantworten der folgenden Frage das Rezept des legendären Eierlikörs in der Datei rezept.txt im Startordner.",
-                "Viel Spaß beim nachmachen",
+                "Viel Spaß beim Nachmachen.",
                 "Final Question: Sollte dieser Escaperoom die volle Punktzahl erhalten ? (Ja/Nein)",
-                "es gibt nur eine richtige Antwort !"
+                "Es gibt nur eine richtige Antwort !"
             ]
 
             hints = [
