@@ -8,7 +8,7 @@ def run(story):
     return new_text
 
 def zeige_abkuerzung(element):
-    file = open("du.csv", "r")
+    file = open("Elements.csv", "r")
     reader = csv.DictReader(file)
     dictionary = {}
     for row in reader:
